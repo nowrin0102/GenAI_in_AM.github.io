@@ -70,3 +70,19 @@ h1, h2 {
 .repo-link:hover {
     text-decoration: underline;
 }
+.project-button {
+    display: block;
+    width: 200px;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-button:hover {
+    background-color: #0056b3;
+}
