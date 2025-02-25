@@ -1,9 +1,10 @@
 .header-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image */
+    max-height: 400px; /* Adjust this value to fit your design */
+    object-fit: contain; /* Ensure the full image is shown without cropping */
 }
 body {
     font-family: Arial, sans-serif;
