@@ -45,7 +45,7 @@ h1, h2 {
 }
 /* Adjust General and Specific Projects sections */
 .general-projects, .specific-projects {
-    width: 40%; /* Adjust width to fit side by side */
+    width: 20%; /* Adjust width to fit side by side */
     background: #fff;
     padding: 15px;
     border-radius: 8px;
@@ -88,53 +88,3 @@ h1, h2 {
     border-radius: 5px;
     margin-right: 10px;
 }
-
-/* .project {
-    width: 45%;
-    background: #fff;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.project img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.repo-link {
-    display: block;
-    margin-top: 10px;
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-} */
-
-/* .repo-link:hover {
-    text-decoration: underline;
-}
-.project-button {
-    display: block;
-    width: 200px;
-    text-align: center;
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project-button:hover {
-    background-color: #0056b3;
-}
-.category-image {
-    width: 150px; /* Adjust to your desired size */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin-bottom: 10px;
-}   */
