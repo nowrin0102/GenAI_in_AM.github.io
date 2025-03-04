@@ -45,7 +45,7 @@ h1, h2 {
 }
 /* Adjust General and Specific Projects sections */
 .general-projects, .specific-projects {
-    width: 48%; /* Adjust width to fit side by side */
+    width: 40%; /* Adjust width to fit side by side */
     background: #fff;
     padding: 15px;
     border-radius: 8px;
@@ -68,20 +68,17 @@ h1, h2 {
 .project-button {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    width: 90%;
-    max-width: 250px;
-    background-color: #007bff;
-    color: white;
-    padding: 8px;
-    margin: 5px auto;
-    border-radius: 5px;
     text-decoration: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: blue; /* Always blue */
     font-weight: bold;
 }
 
 .project-button:hover {
-    background-color: #0056b3;
+    background-color: #e0e0e0;
 }
 
 .project-icon {
