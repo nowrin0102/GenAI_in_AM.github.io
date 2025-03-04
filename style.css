@@ -1,3 +1,4 @@
+/* Header Image Styling */
 .header-image {
     width: 100%; /* Make it responsive */
     height: auto; /* Maintain aspect ratio */
@@ -6,6 +7,8 @@
     max-height: 400px; /* Adjust this value to fit your design */
     object-fit: contain; /* Ensure the full image is shown without cropping */
 }
+
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -14,6 +17,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Container for content */
 .container {
     max-width: 900px;
     margin: 20px auto;
@@ -23,10 +27,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for Heading */
 h1, h2 {
     color: #333;
 }
 
+/* Button Styling */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -37,36 +43,42 @@ h1, h2 {
     border-radius: 5px;
 }
 
+/* Container for Projects */
 .projects-container {
     display: flex;
-    justify-content: space-between; /* Make sections appear side by side */
-    flex-wrap: wrap;
+    justify-content: space-between; /* Space sections apart */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Adds a gap between elements */
     margin-top: 20px;
 }
-/* Adjust General and Specific Projects sections */
+
+/* General and Specific Project Sections */
 .general-projects, .specific-projects {
-    flex: 1 1 45%; /* Allow both to take up 45% of the container */
-    box-sizing: border-box; /* Include padding and borders in the width calculation */
+    flex: 1 1 45%; /* Allow both to take up 45% of the container width */
+    box-sizing: border-box; /* Include padding and borders in width calculation */
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Adds space between sections */
 }
 
-
+/* Category Image Styling */
 .category-image {
     width: 100px; /* Adjust to a smaller size */
     height: auto; /* Maintain aspect ratio */
     display: block;
-    margin: 0 auto 10px; /* Center and add spacing */
+    margin: 0 auto 10px; /* Center and add spacing below */
 }
 
+/* List of Projects in Each Section */
 .project-list {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Styling for Project Button */
 .project-button {
     display: flex;
     align-items: center;
@@ -79,10 +91,12 @@ h1, h2 {
     font-weight: bold;
 }
 
+/* Hover Effect for Project Button */
 .project-button:hover {
     background-color: #e0e0e0;
 }
 
+/* Project Icon Styling */
 .project-icon {
     width: 50px; /* Smaller icons for each project */
     height: 50px;
