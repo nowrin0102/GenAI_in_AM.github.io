@@ -45,12 +45,14 @@ h1, h2 {
 }
 /* Adjust General and Specific Projects sections */
 .general-projects, .specific-projects {
-    width: 40%; /* Adjust width to fit side by side */
+    flex: 1 1 45%; /* Allow both to take up 45% of the container */
+    box-sizing: border-box; /* Include padding and borders in the width calculation */
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
 
 .category-image {
     width: 100px; /* Adjust to a smaller size */
