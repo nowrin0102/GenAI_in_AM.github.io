@@ -45,7 +45,7 @@ h1, h2 {
 }
 /* Adjust General and Specific Projects sections */
 .general-projects, .specific-projects {
-    width: 20%; /* Adjust width to fit side by side */
+    width: 40%; /* Adjust width to fit side by side */
     background: #fff;
     padding: 15px;
     border-radius: 8px;
