@@ -37,14 +37,62 @@ h1, h2 {
     border-radius: 5px;
 }
 
-.projects {
+.projects-container {
     display: flex;
+    justify-content: space-between; /* Make sections appear side by side */
     flex-wrap: wrap;
-    justify-content: space-around;
     margin-top: 20px;
 }
+/* Adjust General and Specific Projects sections */
+.general-projects, .specific-projects {
+    width: 48%; /* Adjust width to fit side by side */
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 
-.project {
+.category-image {
+    width: 100px; /* Adjust to a smaller size */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto 10px; /* Center and add spacing */
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    max-width: 250px;
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    margin: 5px auto;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-button:hover {
+    background-color: #0056b3;
+}
+
+.project-icon {
+    width: 50px; /* Smaller icons for each project */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* .project {
     width: 45%;
     background: #fff;
     padding: 15px;
@@ -66,9 +114,9 @@ h1, h2 {
     color: #007BFF;
     text-decoration: none;
     font-weight: bold;
-}
+} */
 
-.repo-link:hover {
+/* .repo-link:hover {
     text-decoration: underline;
 }
 .project-button {
@@ -87,3 +135,9 @@ h1, h2 {
 .project-button:hover {
     background-color: #0056b3;
 }
+.category-image {
+    width: 150px; /* Adjust to your desired size */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-bottom: 10px;
+}   */
