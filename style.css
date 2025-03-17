@@ -111,3 +111,8 @@ h1, h2 {
     display: block;
     margin: 0 auto;
 }
+#dataset-page .project-image {
+    width: 600px;  /* Fixed width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+}
