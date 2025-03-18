@@ -1,127 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        th, td {
-            border: 2px solid black;
-            padding: 12px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
-</head>
-<!-- <body> -->
-<body>    
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
-    <div class="container">
-        <h1>AM Dataset for GenAI Models</h1>
-        <p>
-            This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models. These datasets include design, pre-process data, build and monitoring, post-process, and quality measurement data, which are essential for developing robust and accurate GenAI models. By leveraging these datasets, researchers can enhance model performance, improve predictive capabilities, and drive innovations in AM.
-        </p>
+export default function ChatApp() {
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
 
-        <h2>Dataset Statistics</h2>
-        <p>
-            This project presents six types of AM datasets, totaling more than 100 questions. They include design, machine-dependent, machine-independent data, monitoring data, post-process, and quality measurement data. These datasets are created from different published papers. Below, we provide some examples of different types of datasets.
-        </p>
+  const sendMessage = () => {
+    if (input.trim()) {
+      setMessages([...messages, { text: input, sender: "You" }]);
+      setInput("");
+    }
+  };
 
-        <!-- Table displaying dataset statistics -->
-        <table>
-            <tr>
-                <th>AM Phase</th>
-                <th>MCQs</th>
-                <th>True/False</th>
-                <th>Free-Form</th>
-            </tr>
-            <tr>
-                <td>Design</td>
-                <td>6</td>
-                <td>12</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Machine Dependent</td>
-                <td>5</td>
-                <td>17</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Machine Independent</td>
-                <td>4</td>
-                <td>10</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Monitoring</td>
-                <td>3</td>
-                <td>10</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Post Process</td>
-                <td>6</td>
-                <td>12</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Quality Measurement</td>
-                <td>10</td>
-                <td>11</td>
-                <td>6</td>
-            </tr>
-        </table>
+  return (
+    <div className="container">
+      <h1>AM Dataset for GenAI Models</h1>
+      <p>
+        This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models. These datasets include design, pre-process data, build and monitoring, post-process, and quality measurement data, which are essential for developing robust and accurate GenAI models. By leveraging these datasets, researchers can enhance model performance, improve predictive capabilities, and drive innovations in AM.
+      </p>
 
-        <h3>Source Codes</h3>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/tree/main" class="button" target="_blank">View Repository</a>
+      <h2>Dataset Statistics</h2>
+      <p>
+        This project presents six types of AM datasets, totaling more than 100 questions. They include design, machine-dependent, machine-independent data, monitoring data, post-process, and quality measurement data. These datasets are created from different published papers. Below, we provide some examples of different types of datasets.
+      </p>
 
-        <h2>Examples from the Dataset</h2> 
-        <p>Design-related dataset:</p>
-        <img src="images/generate.PNG" alt="Design Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/generate%20AM_1.csv">Link to this dataset</a>
-
-        <p>Pre- process data (Machine Dependent)</p>
-        <img src="images/machine dependent.PNG" alt="Machine Dependent Dataset" class="project-image" width="600" height="200">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Machine%20dependent_3.csv">Link to this dataset</a>
-
-        <p>Pre-process data (Machine Independent)</p>
-        <img src="images/machine independent.PNG" alt="Machine Independent Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Machine%20independent_2.csv">Link to this dataset</a>
-
-        <p>AM monitoring dataset</p>
-        <img src="images/build.PNG" alt="Build Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Build_4.csv">Link to this dataset</a>
-
-        <p>Post Process related dataset</p>
-        <img src="images/post process.PNG" alt="Post Process Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Post-Process%20Part_5.csv">Link to this dataset</a>
-
-        <p>Quality Measurement Dataset1</p>
-        <img src="images/quality.PNG" alt="Quality Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Quality_part_6.csv">Link to this dataset</a>
-
-        <br><br>    
-        <a href="index.html" class="button">Back to Home</a>
+      <Card className="h-64 overflow-y-auto border p-2 mt-4">
+        <CardContent>
+          {messages.map((msg, index) => (
+            <motion.div
+              key={index}
+              className={`p-2 my-2 rounded-lg max-w-xs ${
+                msg.sender === "You" ? "bg-blue-200 ml-auto" : "bg-gray-200"
+              }`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <strong>{msg.sender}:</strong> {msg.text}
+            </motion.div>
+          ))}
+        </CardContent>
+      </Card>
+      <div className="mt-4 flex gap-2">
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type a message..."
+        />
+        <Button onClick={sendMessage}>Send</Button>
+      </div>
     </div>
-<!-- </body> -->
-</body> 
-</html>
+  );
+}
