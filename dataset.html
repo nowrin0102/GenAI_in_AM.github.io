@@ -189,19 +189,19 @@
                 chatbox.scrollTop = chatbox.scrollHeight;  // Scroll to the bottom
             }
 
-            async function getAIResponse(message) {
-                let apiKey = "02d33ffc524f45b5af582c6c902cb23e"; // Replace with your Azure OpenAI API Key
-                let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
-                let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
             // async function getAIResponse(message) {
-            //     let apiKey = process.env.AZURE_OPENAI_API_KEY; // Use environment variable for API key
-            //     let endpoint = process.env.AZURE_OPENAI_ENDPOINT; // Use environment variable for endpoint
-            //     let deployment = process.env.AZURE_OPENAI_DEPLOYMENT; // Use environment variable for deployment name
+            //     let apiKey = "02d33ffc524f45b5af582c6c902cb23e"; // Replace with your Azure OpenAI API Key
+            //     let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
+            //     let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
+            async function getAIResponse(message) {
+                let apiKey = process.env.AZURE_OPENAI_API_KEY; // Use environment variable for API key
+                let endpoint = process.env.AZURE_OPENAI_ENDPOINT; // Use environment variable for endpoint
+                let deployment = process.env.AZURE_OPENAI_DEPLOYMENT; // Use environment variable for deployment name
 
-            //     if (!apiKey || !endpoint || !deployment) {
-            //         console.error("Missing API key or endpoint. Ensure environment variables are set.");
-            //         return "Error: API key or endpoint is missing.";
-            //     }
+                if (!apiKey || !endpoint || !deployment) {
+                    console.error("Missing API key or endpoint. Ensure environment variables are set.");
+                    return "Error: API key or endpoint is missing.";
+                }
                 let response = await fetch(endpoint, {
                     method: "POST",
                     headers: {
