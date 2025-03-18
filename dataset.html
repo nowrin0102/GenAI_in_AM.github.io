@@ -21,11 +21,14 @@
         async function sendMessage() {
             let input = document.getElementById("userInput").value;
             let chatbox = document.getElementById("chatbox");
+            // Add the user's message to the chatbox
             chatbox.innerHTML += `<div class='message user'>${input}</div>`;
             document.getElementById("userInput").value = "";
 
+            // Get the AI response
             let reply = await getAIResponse(input);
             chatbox.innerHTML += `<div class='message bot'>${reply}</div>`;
+            chatbox.scrollTop = chatbox.scrollHeight;  // Scroll to the bottom
         }
 
         async function getAIResponse(message) {
@@ -33,7 +36,7 @@
             let endpoint = "https://benchmarking31january.openai.azure.com/openai/deployments/gpt-4-turbo-2024-04-09/chat/completions?api-version=2024-05-01-preview"; // Replace with your Azure OpenAI Endpoint
             let deployment = "gpt-4o"; // Replace with your Azure GPT Deployment Name
 
-            let response = await fetch(`${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=2024-05-01-preview`, {
+            let response = await fetch(endpoint, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -43,6 +46,11 @@
                     messages: [{ role: "user", content: message }]
                 })
             });
+
+            if (!response.ok) {
+                console.error("Error fetching AI response:", response.statusText);
+                return "Sorry, I couldn't process your request.";
+            }
 
             let data = await response.json();
             return data.choices[0].message.content;
