@@ -1,56 +1,38 @@
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
 
-export default function ChatApp() {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+    <style>
+        #chatbox { width: 300px; height: 400px; border: 1px solid black; overflow-y: auto; }
+        .message { margin: 5px; padding: 8px; border-radius: 5px; }
+        .user { background-color: lightblue; text-align: right; }
+        .bot { background-color: lightgray; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div id="chatbox"></div>
+    <input id="userInput" type="text">
+    <button onclick="sendMessage()">Send</button>
 
-  const sendMessage = () => {
-    if (input.trim()) {
-      setMessages([...messages, { text: input, sender: "You" }]);
-      setInput("");
-    }
-  };
+    <script>
+        function sendMessage() {
+            let input = document.getElementById("userInput").value;
+            let chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<div class='message user'>${input}</div>`;
+            
+            let responses = {
+                "hello": "Hi there! How can I help?",
+                "how are you?": "I'm just a bot, but I'm doing great!",
+                "bye": "Goodbye! Have a nice day!"
+            };
 
-  return (
-    <div className="container">
-      <h1>AM Dataset for GenAI Models</h1>
-      <p>
-        This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models. These datasets include design, pre-process data, build and monitoring, post-process, and quality measurement data, which are essential for developing robust and accurate GenAI models. By leveraging these datasets, researchers can enhance model performance, improve predictive capabilities, and drive innovations in AM.
-      </p>
-
-      <h2>Dataset Statistics</h2>
-      <p>
-        This project presents six types of AM datasets, totaling more than 100 questions. They include design, machine-dependent, machine-independent data, monitoring data, post-process, and quality measurement data. These datasets are created from different published papers. Below, we provide some examples of different types of datasets.
-      </p>
-
-      <Card className="h-64 overflow-y-auto border p-2 mt-4">
-        <CardContent>
-          {messages.map((msg, index) => (
-            <motion.div
-              key={index}
-              className={`p-2 my-2 rounded-lg max-w-xs ${
-                msg.sender === "You" ? "bg-blue-200 ml-auto" : "bg-gray-200"
-              }`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <strong>{msg.sender}:</strong> {msg.text}
-            </motion.div>
-          ))}
-        </CardContent>
-      </Card>
-      <div className="mt-4 flex gap-2">
-        <Input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type a message..."
-        />
-        <Button onClick={sendMessage}>Send</Button>
-      </div>
-    </div>
-  );
-}
+            let reply = responses[input.toLowerCase()] || "I'm not sure how to respond.";
+            chatbox.innerHTML += `<div class='message bot'>${reply}</div>`;
+        }
+    </script>
+</body>
+</html>
