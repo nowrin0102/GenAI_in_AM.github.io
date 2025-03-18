@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+from Crypto.Cipher import AES
+import base64
+import os
+
+# Define the encryption key (must be 16, 24, or 32 bytes long)
+key = b'ThisIsASecretKey123'  # 16-byte key (AES-128)
+
+# Function to pad data to be a multiple of AES block size
+def pad(data):
+    block_size = AES.block_size  # AES block size is 16 bytes
+    padding_length = block_size - (len(data) % block_size)
+    padding = chr(padding_length) * padding_length
+    return data + padding
+
+# Encrypt the HTML file content
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +29,6 @@
             padding: 20px;
             text-align: center; /* Center text */
         }
-
         /* Table Styling */
         table {
             width: 80%; /* Ensure the table takes up the full container width */
@@ -35,89 +49,13 @@
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-
-        /* Chatbox Styling */
-        #chatbox { 
-            width: 80%; 
-            height: 200px; 
-            border: 1px solid black; 
-            overflow-y: auto; 
-            padding: 10px; 
-            box-sizing: border-box;
-            margin-left: auto;
-            margin-right: auto; /* Center the chatbox horizontally */
-        }
-        .message { 
-            margin: 5px; 
-            padding: 8px; 
-            border-radius: 5px; 
-            max-width: 80%; 
-        }
-        .user { 
-            background-color: lightblue; 
-            text-align: right; 
-            align-self: flex-end; 
-        }
-        .bot { 
-            background-color: lightgray; 
-            text-align: left; 
-            align-self: flex-start; 
-        }
-
-        /* Message Input Box Styling */
-        #userInput {
-            width: 70%; /* Wider input */
-            height: 12px; /* Taller input box */
-            padding: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-
-        /* Send Button Styling */
-        button {
-            padding: 8px 8px;
-            font-size: 12px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-left: 5px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #008CBA;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: #007B9A;
-        }
     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>AM Dataset for GenAI Models</h1>
-        <p>
-            This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models. These datasets include design, pre-process data, build and monitoring, post-process, and quality measurement data, which are essential for developing robust and accurate GenAI models. By leveraging these datasets, researchers can enhance model performance, improve predictive capabilities, and drive innovations in AM.
-        </p>
-
+        <p>This section provides a collection of diverse AM datasets...</p>
         <h2>Dataset Statistics</h2>
-        <p>
-            This project presents six types of AM datasets, totaling more than 100 questions. They include design, machine-dependent, machine-independent data, monitoring data, post-process, and quality measurement data. These datasets are created from different published papers. Below, we provide some examples of different types of datasets.
-        </p>
-
-        <!-- Table displaying dataset statistics -->
         <table>
             <tr>
                 <th>AM Phase</th>
@@ -131,124 +69,22 @@
                 <td>12</td>
                 <td>2</td>
             </tr>
-            <tr>
-                <td>Machine Dependent</td>
-                <td>5</td>
-                <td>17</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Machine Independent</td>
-                <td>4</td>
-                <td>10</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Monitoring</td>
-                <td>3</td>
-                <td>10</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Post Process</td>
-                <td>6</td>
-                <td>12</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Quality Measurement</td>
-                <td>10</td>
-                <td>11</td>
-                <td>6</td>
-            </tr>
         </table>
-
-        <h3>Source Codes</h3>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/tree/main" class="button" target="_blank">View Repository</a>
-
-        
-        <h1>GenAI Chatbot</h1>
-        <div id="chatbox"></div>
-        <div>
-            <input id="userInput" type="text">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-
-        <script>
-            async function sendMessage() {
-                let input = document.getElementById("userInput").value;
-                let chatbox = document.getElementById("chatbox");
-                // Add the user's message to the chatbox
-                chatbox.innerHTML += `<div class='message user'>${input}</div>`;
-                document.getElementById("userInput").value = "";
-
-                // Get the AI response
-                let reply = await getAIResponse(input);
-                chatbox.innerHTML += `<div class='message bot'>${reply}</div>`;
-                chatbox.scrollTop = chatbox.scrollHeight;  // Scroll to the bottom
-            }
-
-            async function getAIResponse(message) {
-                let apiKey = "02d33ffc524f45b5af582c6c902cb23e"; // Replace with your Azure OpenAI API Key
-                let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
-                let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
-
-                let response = await fetch(endpoint, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "api-key": apiKey
-                    },
-                    body: JSON.stringify({
-                        messages: [{ role: "user", content: message }]
-                    })
-                });
-
-                if (!response.ok) {
-                    console.error("Error fetching AI response:", response.statusText);
-                    return "Sorry, I couldn't process your request.";
-                }
-
-                let data = await response.json();
-                return data.choices[0].message.content;
-            }
-        </script>
-
-        
-        <h2>Examples from the Dataset</h2> 
-        <p>Design-related dataset:</p>
-        <img src="images/generate.PNG" alt="Design Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/generate%20AM_1.csv">Link to this dataset</a>
-
-        <p>Pre- process data (Machine Dependent)</p>
-        <img src="images/machine dependent.PNG" alt="Machine Dependent Dataset" class="project-image" width="600" height="200">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Machine%20dependent_3.csv">Link to this dataset</a>
-
-        <p>Pre-process data (Machine Independent)</p>
-        <img src="images/machine independent.PNG" alt="Machine Independent Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Machine%20independent_2.csv">Link to this dataset</a>
-
-        <p>AM monitoring dataset</p>
-        <img src="images/build.PNG" alt="Build Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Build_4.csv">Link to this dataset</a>
-
-        <p>Post Process related dataset</p>
-        <img src="images/post process.PNG" alt="Post Process Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Post-Process%20Part_5.csv">Link to this dataset</a>
-
-        <p>Quality Measurement Dataset1</p>
-        <img src="images/quality.PNG" alt="Quality Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Quality_part_6.csv">Link to this dataset</a>
-
-        <br><br>    
-        <a href="index.html" class="button">Back to Home</a>
-
     </div>
 </body>
-</html>
+</html>"""
+
+# Convert HTML content to bytes
+data_bytes = pad(html_content).encode()
+
+# Generate a random initialization vector (IV)
+iv = os.urandom(16)
+
+# Encrypt data using AES-CBC mode
+cipher = AES.new(key, AES.MODE_CBC, iv)
+encrypted_data = cipher.encrypt(data_bytes)
+
+# Encode in base64 for safe storage and transmission
+encrypted_html = base64.b64encode(iv + encrypted_data).decode()
+
+encrypted_html

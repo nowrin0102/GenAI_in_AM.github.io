@@ -6,11 +6,22 @@
     <title>Project 1</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Centering the container */
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center; /* Center text */
+        }
+
         /* Table Styling */
         table {
-            width: 80%;
+            width: 80%; /* Ensure the table takes up the full container width */
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto; /* Center the table horizontally */
         }
         th, td {
             border: 2px solid black;
@@ -33,6 +44,8 @@
             overflow-y: auto; 
             padding: 10px; 
             box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto; /* Center the chatbox horizontally */
         }
         .message { 
             margin: 5px; 
@@ -53,24 +66,24 @@
 
         /* Message Input Box Styling */
         #userInput {
-            width: 80%; /* Wider input */
-            height: 20px; /* Taller input box */
-            padding: 8px;
+            width: 70%; /* Wider input */
+            height: 12px; /* Taller input box */
+            padding: 5px;
             font-size: 16px;
             margin-top: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
         /* Send Button Styling */
         button {
-            padding: 10px 10px;
-            font-size: 16px;
+            padding: 8px 8px;
+            font-size: 12px;
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
-            margin-left: 10px;
+            margin-left: 5px;
         }
         button:hover {
             background-color: #45a049;
@@ -89,7 +102,6 @@
         .button:hover {
             background-color: #007B9A;
         }
-
     </style>
 </head>
 
@@ -150,6 +162,10 @@
                 <td>6</td>
             </tr>
         </table>
+
+        <h3>Source Codes</h3>
+        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/tree/main" class="button" target="_blank">View Repository</a>
+
         
         <h1>GenAI Chatbot</h1>
         <div id="chatbox"></div>
@@ -173,9 +189,9 @@
             }
 
             async function getAIResponse(message) {
-                let apiKey = "8d160888af504fceae6d3d3f1c4bbad9"; // Replace with your Azure OpenAI API Key
-                let endpoint = "https://benchmarking31january.openai.azure.com/openai/deployments/gpt-4-turbo-2024-04-09/chat/completions?api-version=2024-05-01-preview"; // Replace with your Azure OpenAI Endpoint
-                let deployment = "gpt-4o"; // Replace with your Azure GPT Deployment Name
+                let apiKey = "02d33ffc524f45b5af582c6c902cb23e"; // Replace with your Azure OpenAI API Key
+                let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
+                let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
 
                 let response = await fetch(endpoint, {
                     method: "POST",
@@ -198,9 +214,7 @@
             }
         </script>
 
-        <h3>Source Codes</h3>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/tree/main" class="button" target="_blank">View Repository</a>
-
+        
         <h2>Examples from the Dataset</h2> 
         <p>Design-related dataset:</p>
         <img src="images/generate.PNG" alt="Design Dataset" class="project-image">
