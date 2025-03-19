@@ -1,0 +1,29 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - main  # Runs when you push to the "main" branch
+  workflow_dispatch:  # Allows manual triggering from GitHub
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Fetches the latest code
+
+      - name: Set API Key as Environment Variable
+        run: echo "AZURE_OPENAI_API_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}" >> $GITHUB_ENV
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Change if you need a different version
+
+      - name: Install Dependencies
+        run: npm install  # Ensure you have a package.json in your repo
+
+      - name: Run Script
+        run: node your_script.js  # Replace with your actual script file
