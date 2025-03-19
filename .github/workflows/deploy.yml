@@ -1,21 +1,29 @@
+name: Windows Python Workflow
+
+on:
+  push:
+    branches:
+      - main  # Runs when code is pushed to the main branch
 
 jobs:
-  deploy:
-    runs-on: windows-latest
+  run-python:
+    runs-on: windows-latest  # Runs on a Windows machine
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  
+        uses: actions/checkout@v3  # Fetches your repository
 
-      - name: Set Up API Key
-        shell: powershell
-        run: |
-          echo "Setting environment variables..."
-          echo "AZURE_OPENAI_API_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}" >> $env:GITHUB_ENV
-          echo "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}" >> $env:GITHUB_ENV
-          echo "AZURE_OPENAI_DEPLOYMENT=${{ secrets.AZURE_OPENAI_DEPLOYMENT }}" >> $env:GITHUB_ENV
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-      - name: Run Script
-        shell: powershell
-        run: node your_script.js
+      - name: Set Secret as Environment Variable
+        run: echo "SECRET_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}" >> $GITHUB_ENV
 
+      - name: Install Dependencies
+        run: pip install -r requirements.txt  # If dependencies exist
 
+      - name: Run Python Script
+        env:
+          SECRET_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+        run: python src/script.py  # Updated path
