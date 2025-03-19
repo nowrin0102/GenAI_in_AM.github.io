@@ -1,29 +1,22 @@
-name: Windows Python Workflow
+
+name: UPDATE_APP_ACTION
 
 on:
   push:
     branches:
-      - main  # Runs when code is pushed to the main branch
-
+      - main
 jobs:
-  run-python:
-    runs-on: windows-latest  # Runs on a Windows machine
+  update-readme-with-appinfo:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3  # Fetches your repository
-
-      - name: Set Up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Set Secret as Environment Variable
-        run: echo "SECRET_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}" >> $GITHUB_ENV
-
-      - name: Install Dependencies
-        run: pip install -r requirements.txt  # If dependencies exist
-
-      - name: Run Python Script
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Generate README file
+        run: node index.js
         env:
-          SECRET_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
-        run: python src/script.py  # Updated path
+          MY_API_KEY: ${{secrets.AZURE_OPENAI_API_KEY}}
