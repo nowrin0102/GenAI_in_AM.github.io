@@ -1,0 +1,19 @@
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  
+
+      - name: Set Up API Key
+        shell: powershell
+        run: |
+          echo "Setting environment variables..."
+          echo "AZURE_OPENAI_API_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}" >> $env:GITHUB_ENV
+          echo "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}" >> $env:GITHUB_ENV
+          echo "AZURE_OPENAI_DEPLOYMENT=${{ secrets.AZURE_OPENAI_DEPLOYMENT }}" >> $env:GITHUB_ENV
+
+      - name: Run Script
+        shell: powershell
+        run: node your_script.js
