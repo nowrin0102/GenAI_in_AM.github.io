@@ -184,7 +184,8 @@
             }
 
             async function getAIResponse(message) {
-                let apiKey = "02d33ffc524f45b5af582c6c902cb23e"; // Replace with your Azure OpenAI API Key
+                // let apiKey = "02d33ffc524f45b5af582c6c902cb23e"; // Replace with your Azure OpenAI API Key
+                let apiKey = AZURE_OPENAI_API_KEY
                 let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
                 let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
             // async function getAIResponse(message) {
