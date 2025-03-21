@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,102 +139,121 @@
                 </a>
             </div>
         </div>
-    </div>
-
-        <!-- <h2>Dataset Statistics</h2>
-        <p>
-            This project presents five types of AM datasets, totaling more than 100 questions. They include design, pre-process, monitoring, post-process, and quality measurement data. These datasets are created from different published papers.
-        </p>
-
-
-        <!-- <h3>Source Codes</h3>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/tree/main" class="button" target="_blank">View Repository</a>
-
-        
-        <h1>GenAI Chatbot</h1>
-        <div id="chatbox"></div>
-        <div>
-            <input id="userInput" type="text">
-            <button onclick="sendMessage()">Send</button>
-        </div> -->
-
-        <!-- <script>
-            async function sendMessage() {
-                let input = document.getElementById("userInput").value;
-                let chatbox = document.getElementById("chatbox");
-                // Add the user's message to the chatbox
-                chatbox.innerHTML += `<div class='message user'>${input}</div>`;
-                document.getElementById("userInput").value = "";
-
-                // Get the AI response
-                let reply = await getAIResponse(input);
-                chatbox.innerHTML += `<div class='message bot'>${reply}</div>`;
-                chatbox.
-                scrollTop = chatbox.scrollHeight;  // Scroll to the bottom
+    </div> -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GenAI Agent-Based System for Additive Manufacturing</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .container {
+                width: 80%;
+                margin: auto;
+                text-align: center;
             }
-// "02d33ffc524f45b5af582c6c902cb23e"
-            async function getAIResponse(message) {
-                let apiKey = "42cEIKjJE2kUiB1xPrwixrwnz6DC";
-                // let apiKey = AZURE_OPENAI_API_KEY;
-                let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
-                let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
+            .project-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .project-button {
+                display: flex;
+                align-items: center;
+                width: 350px;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                text-decoration: none;
+                color: black;
+                background-color: #f9f9f9;
+                transition: background-color 0.3s ease;
+            }
+            .project-button:hover {
+                background-color: #e0e0e0;
+            }
+            .project-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                border-radius: 5px;
+            }
+            .button {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 12px 18px;
+                background-color: #007BFF;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            .button:hover {
+                background-color: #0056b3;
+            }
+            section {
+                background: #fff;
+                padding: 20px;
+                margin: 15px 0;
+                border-radius: 5px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            }
+            h1, h2 {
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Resource Repository: AM Datasets for Gen AI Models</h1>
+            <p>
+                This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models. These datasets include design, pre-process, build and monitoring, post-process, and quality measurement data, which are essential for developing robust and accurate GenAI models. By leveraging these datasets, researchers can enhance model performance, improve predictive capabilities, and drive innovations in AM.
+            </p>
+    
+            <div class="project-section">
+                <h2>1. Understanding GenAI Agents</h2>
+                <p>This project introduces the concept of GenAI agents, their capabilities, and how they can be leveraged in manufacturing, particularly in AM.</p>
+                <div class="project-list">
+                    <a href="dataset_1.html" class="project-button">
+                        <img src="images/general-project2.jpg" alt="GenAI in Manufacturing" class="project-icon">
+                        Benchmarking Dataset
+                    </a>
+                </div>
+            </div>
+            <div class="project-section">
+                <h2>1. Understanding GenAI Agents</h2>
+                <p>This project introduces the concept of GenAI agents, their capabilities, and how they can be leveraged in manufacturing, particularly in AM.</p>
+                <div class="project-list">
+                    <a href="dataset_1.html" class="project-button">
+                        <img src="images/general-project2.jpg" alt="GenAI in Manufacturing" class="project-icon">
+                        Training Dataset
+                    </a>
+                </div>
+            </div>
+            <div class="project-section">
+                <h2>1. Understanding GenAI Agents</h2>
+                <p>This project introduces the concept of GenAI agents, their capabilities, and how they can be leveraged in manufacturing, particularly in AM.</p>
+                <div class="project-list">
+                    <a href="dataset_1.html" class="project-button">
+                        <img src="images/general-project2.jpg" alt="GenAI in Manufacturing" class="project-icon">
+                        Dataset for Agents
+                    </a>
+                </div>
+            </div>
+            <div class="project-section">
+                <h2>1. Understanding GenAI Agents</h2>
+                <p>This project introduces the concept of GenAI agents, their capabilities, and how they can be leveraged in manufacturing, particularly in AM.</p>
+                <div class="project-list">
+                    <a href="dataset_1.html" class="project-button">
+                        <img src="images/general-project2.jpg" alt="GenAI in Manufacturing" class="project-icon">
+                        Promts
+                    </a>
+                </div>
+            </div>       
             
-                let response = await fetch(endpoint, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "api-key": apiKey
-                    },
-                    body: JSON.stringify({
-                        messages: [{ role: "user", content: message }]
-                    })
-                });
-
-                if (!response.ok) {
-                    console.error("Error fetching AI response:", response.statusText);
-                    return "Sorry, I couldn't process your request.";
-                }
-
-                let data = await response.json();
-                return data.choices[0].message.content;
-            }
-        </script>
-
-         -->
-        <!-- <h2>Examples from the Dataset</h2> 
-        <p>Design-related dataset:</p>
-        <img src="images/generate.PNG" alt="Design Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/generate%20AM_1.csv">Link to this dataset</a>
-
-        <p>Pre- process data (Machine Dependent)</p>
-        <img src="images/machine dependent.PNG" alt="Machine Dependent Dataset" class="project-image" width="600" height="200">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Machine%20dependent_3.csv">Link to this dataset</a>
-
-        <p>Pre-process data (Machine Independent)</p>
-        <img src="images/machine independent.PNG" alt="Machine Independent Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Machine%20independent_2.csv">Link to this dataset</a>
-
-        <p>AM monitoring dataset</p>
-        <img src="images/build.PNG" alt="Build Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Build_4.csv">Link to this dataset</a>
-
-        <p>Post Process related dataset</p>
-        <img src="images/post process.PNG" alt="Post Process Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Post-Process%20Part_5.csv">Link to this dataset</a>
-
-        <p>Quality Measurement Dataset1</p>
-        <img src="images/quality.PNG" alt="Quality Dataset" class="project-image">
-        <br>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/Quality_part_6.csv">Link to this dataset</a> -->
-
-        <br><br>    
-        <a href="index.html" class="button">Back to Home</a>
-
-    </div>
-</body>
-</html>
+            <a href="index.html" class="button">Back to Home</a>
+        </div>
+    </body>
+    </html>
+    
