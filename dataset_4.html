@@ -154,102 +154,11 @@
             This project presents five types of AM datasets, totaling more than 100 questions. They include design, pre-process, monitoring, post-process, and quality measurement data. These datasets are created from different published papers.
         </p>
 
-        <!-- Table displaying dataset statistics -->
-        <table>
-            <tr>
-                <th>AM Phase</th>
-                <th>MCQs</th>
-                <th>True/False</th>
-                <th>Free-Form</th>
-            </tr>
-            <tr>
-                <td>Design</td>
-                <td>6</td>
-                <td>12</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Pre-process</Pre-process></td>
-                <td>9</td>
-                <td>27</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>Monitoring</td>
-                <td>3</td>
-                <td>10</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Post Process</td>
-                <td>6</td>
-                <td>12</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Quality Measurement</td>
-                <td>10</td>
-                <td>11</td>
-                <td>6</td>
-            </tr>
-        </table>
-
-        <h3>Source Codes</h3>
-        <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/tree/main" class="button" target="_blank">View Repository</a>
-
-        
-        <h1>GenAI Chatbot</h1>
-        <div id="chatbox"></div>
-        <div>
-            <input id="userInput" type="text">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-
-        <script>
-            async function sendMessage() {
-                let input = document.getElementById("userInput").value;
-                let chatbox = document.getElementById("chatbox");
-                // Add the user's message to the chatbox
-                chatbox.innerHTML += `<div class='message user'>${input}</div>`;
-                document.getElementById("userInput").value = "";
-
-                // Get the AI response
-                let reply = await getAIResponse(input);
-                chatbox.innerHTML += `<div class='message bot'>${reply}</div>`;
-                chatbox.
-                scrollTop = chatbox.scrollHeight;  // Scroll to the bottom
-            }
-// "02d33ffc524f45b5af582c6c902cb23e"
-            async function getAIResponse(message) {
-                let apiKey = "42cEIKjJE2kUiB1xPrwixrwnz6DC";
-                // let apiKey = AZURE_OPENAI_API_KEY;
-                let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
-                let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
-            
-                let response = await fetch(endpoint, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "api-key": apiKey
-                    },
-                    body: JSON.stringify({
-                        messages: [{ role: "user", content: message }]
-                    })
-                });
-
-                if (!response.ok) {
-                    console.error("Error fetching AI response:", response.statusText);
-                    return "Sorry, I couldn't process your request.";
-                }
-
-                let data = await response.json();
-                return data.choices[0].message.content;
-            }
-        </script>
+      
 
         
         <h2>Examples from the Dataset</h2> 
-        <p>Design-related dataset:</p>
+        <p>This project outlines the guidelines for structuring prompts to ensure they are clear, effective, and easily interpretable by Generative AI models.</p>
         <img src="images/generate.PNG" alt="Design Dataset" class="project-image">
         <br>
         <a href="https://github.com/nowrin0102/AM-dataset-for-GenAI/blob/main/generate%20AM_1.csv">Link to this dataset</a>
