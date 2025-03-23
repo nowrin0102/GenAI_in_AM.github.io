@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Benchmarking Metrics for GenAI in Additive Manufacturing - Learn how to evaluate and compare generative AI models using qualitative metrics">
+    <title>Benchmarking Metrics for GenAI in AM | Tutorials</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <span>GenAI in AM</span>
+            </a>
+            
+            <div class="search-container">
+                <form class="search-form" role="search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="search-results"></div>
+            </div>
+            
+            <button class="hamburger-menu" aria-label="Toggle menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../intro/index.html">Introduction</a></li>
+                    <li><a href="../core-technologies/index.html">Core Technologies</a></li>
+                    <li><a href="../tutorials/index.html" class="active">Tutorials</a></li>
+                    <li><a href="../case-studies/index.html">Case Studies</a></li>
+                    <li><a href="../resources/index.html">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="index.html">Tutorials</a></li>
+                    <li><span class="current">Benchmarking Metrics</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Benchmarking Metrics for GenAI in AM</h1>
+                        <p>A comprehensive methodology for evaluating the capabilities of different generative AI models in addressing additive manufacturing tasks.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="../../images/general-project1.jpg" alt="GenAI Benchmarking for AM" width="500" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content with Sidebar -->
+        <div class="container with-sidebar">
+            <!-- Sidebar with Table of Contents -->
+            <aside class="sidebar">
+                <div class="toc">
+                    <h2 class="toc-title">On This Page</h2>
+                    <ul class="toc-list">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#metrics">Qualitative Metrics</a></li>
+                        <li><a href="#agnostic-metrics">Agnostic Metrics</a></li>
+                        <li><a href="#domain-metrics">Domain Task Metrics</a></li>
+                        <li><a href="#problem-metrics">Problem Task Metrics</a></li>
+                        <li><a href="#scoring">Scoring Matrix</a></li>
+                        <li><a href="#implementation">Implementation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="section-navigation">
+                    <h3>Related Topics</h3>
+                    <ul class="toc-list">
+                        <li><a href="benchmarking-tools.html">Benchmarking Tools</a></li>
+                        <li><a href="prompt-engineering.html">Prompt Engineering</a></li>
+                        <li><a href="../resources/datasets.html">AM Datasets</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="content">
+                <!-- Overview (Basic Level) -->
+                <section class="content-section" data-level="basic" id="overview">
+                    <h2>Benchmarking GenAI Models for AM</h2>
+                    <span class="complexity-badge complexity-beginner">Beginner</span>
+                    
+                    <p>This tutorial presents a comprehensive methodology for evaluating the capabilities of various existing GenAI tools in addressing diverse AM-related tasks. The focus is on establishing qualitative metrics that can help you assess and compare different GenAI models for additive manufacturing applications.</p>
+                    
+                    <div class="key-points">
+                        <h3>Key Concepts:</h3>
+                        <ul>
+                            <li><strong>Evaluation Framework:</strong> A structured approach to assess GenAI performance in AM contexts</li>
+                            <li><strong>Qualitative Metrics:</strong> 35 metrics across three categories to comprehensively evaluate model capabilities</li>
+                            <li><strong>Scoring Matrix:</strong> A practical tool for assessing different GenAI models on AM-specific tasks</li>
+                            <li><strong>Comparative Analysis:</strong> Methods to benchmark various GenAI tools against each other</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Our research evaluated several major GenAI models including GPT-4, GPT-3.5, Gemini (previously BARD), Llama 2, DALL·E 3, and Stable Diffusion across a range of AM-specific tasks using these metrics.</p>
+                </section>
+                
+                <!-- Qualitative Metrics (Basic Level) -->
+                <section class="content-section" data-level="basic" id="metrics">
+                    <h2>Qualitative Metrics Framework</h2>
+                    <span class="complexity-badge complexity-beginner">Beginner</span>
+                    
+                    <p>Our benchmarking framework is built around 35 qualitative metrics organized into three main categories. This comprehensive set of metrics allows for a detailed assessment of how well different GenAI models perform on AM-related tasks.</p>
+                    
+                    <div class="image-with-caption">
+                        <img src="../../images/general-project1.jpg" alt="GenAI Metrics Categories" class="medium-image">
+                        <p class="caption">The three categories of qualitative metrics for evaluating GenAI models in AM</p>
+                    </div>
+                    
+                    <h3>Metric Categories</h3>
+                    <p>The metrics are divided into three main categories, each addressing different aspects of GenAI performance:</p>
+                    
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Agnostic Metrics</h3>
+                                <p class="card-text">General capabilities applicable across domains, including accuracy, coherence, and relevance.</p>
+                                <a href="#agnostic-metrics" class="btn">View Agnostic Metrics</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Domain Task Metrics</h3>
+                                <p class="card-text">Metrics specific to the additive manufacturing domain, such as AM knowledge and process understanding.</p>
+                                <a href="#domain-metrics" class="btn">View Domain Metrics</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Problem Task Metrics</h3>
+                                <p class="card-text">Metrics focused on specific AM problem types, like design generation, parameter optimization, and defect detection.</p>
+                                <a href="#problem-metrics" class="btn">View Problem Metrics</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Agnostic Metrics (Intermediate Level) -->
+                <section class="content-section" data-level="intermediate" id="agnostic-metrics">
+                    <h2>Agnostic Metrics</h2>
+                    <span class="complexity-badge complexity-intermediate">Intermediate</span>
+                    
+                    <p>Agnostic metrics evaluate general capabilities that are important across all domains and applications. These metrics assess how well a GenAI model performs regardless of the specific field or task.</p>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Description</th>
+                                    <th>Assessment Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Accuracy</td>
+                                    <td>Correctness of factual information</td>
+                                    <td>Are the facts and technical details correct?</td>
+                                </tr>
+                                <tr>
+                                    <td>Coherence</td>
+                                    <td>Logical flow and consistency</td>
+                                    <td>Is the response logically structured and cohesive?</td>
+                                </tr>
+                                <tr>
+                                    <td>Relevance</td>
+                                    <td>Alignment with the query</td>
+                                    <td>Does the response directly address the question?</td>
+                                </tr>
+                                <tr>
+                                    <td>Completeness</td>
+                                    <td>Comprehensiveness of the response</td>
+                                    <td>Does it cover all aspects of the query?</td>
+                                </tr>
+                                <tr>
+                                    <td>Conciseness</td>
+                                    <td>Efficiency of communication</td>
+                                    <td>Is the response appropriately brief without unnecessary details?</td>
+                                </tr>
+                                <tr>
+                                    <td>Clarity</td>
+                                    <td>Ease of understanding</td>
+                                    <td>Is the response clear and unambiguous?</td>
+                                </tr>
+                                <tr>
+                                    <td>Consistency</td>
+                                    <td>Internal agreement</td>
+                                    <td>Are all parts of the response mutually consistent?</td>
+                                </tr>
+                                <tr>
+                                    <td>Contextualization</td>
+                                    <td>Adaptation to the context</td>
+                                    <td>Does it consider the broader context of the query?</td>
+                                </tr>
+                                <tr>
+                                    <td>Creativity</td>
+                                    <td>Novel or innovative aspects</td>
+                                    <td>Does it provide creative solutions or perspectives?</td>
+                                </tr>
+                                <tr>
+                                    <td>Critical Thinking</td>
+                                    <td>Analytical reasoning</td>
+                                    <td>Does it show evidence of analyzing and evaluating information?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Evaluating Agnostic Metrics</h3>
+                    <p>When assessing GenAI models with these metrics, consider:</p>
+                    <ul>
+                        <li><strong>Factual Verification:</strong> Cross-check factual claims against reliable AM knowledge sources</li>
+                        <li><strong>Structural Analysis:</strong> Evaluate the logical organization and flow of the response</li>
+                        <li><strong>Comparative Assessment:</strong> Compare responses to the same query across different models</li>
+                        <li><strong>Completeness Check:</strong> Ensure all aspects of the query are addressed</li>
+                    </ul>
+                </section>
+                
+                <!-- Domain Task Metrics (Intermediate Level) -->
+                <section class="content-section" data-level="intermediate" id="domain-metrics">
+                    <h2>Domain Task Metrics</h2>
+                    <span class="complexity-badge complexity-intermediate">Intermediate</span>
+                    
+                    <p>Domain task metrics evaluate how well a GenAI model understands and applies knowledge specific to the additive manufacturing domain. These metrics focus on expertise in AM processes, materials, equipment, and industry-specific considerations.</p>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3>AM Knowledge Metrics</h3>
+                            <ul>
+                                <li><strong>Process Understanding:</strong> Knowledge of various AM processes (SLA, FDM, SLS, DMLS, etc.)</li>
+                                <li><strong>Material Knowledge:</strong> Understanding of AM materials and their properties</li>
+                                <li><strong>Equipment Familiarity:</strong> Knowledge of AM machines and their capabilities</li>
+                                <li><strong>Design for AM:</strong> Understanding design principles specific to additive manufacturing</li>
+                                <li><strong>Post-Processing Knowledge:</strong> Understanding of post-processing requirements and techniques</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3>Technical Application Metrics</h3>
+                            <ul>
+                                <li><strong>Standards Awareness:</strong> Knowledge of relevant AM standards and specifications</li>
+                                <li><strong>Quality Control Understanding:</strong> Knowledge of AM quality control methods</li>
+                                <li><strong>Parameter Optimization:</strong> Understanding relationship between parameters and outcomes</li>
+                                <li><strong>Design Constraints:</strong> Recognition of build constraints and limitations</li>
+                                <li><strong>Domain Terminology:</strong> Correct use of AM-specific terminology and jargon</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Example Assessment: Process Understanding</h3>
+                    <div class="example-box">
+                        <h4>Query: Explain the key differences between SLA and DMLS processes.</h4>
+                        <div class="example-content">
+                            <p><strong>High-Scoring Response:</strong> The response would accurately describe SLA (Stereolithography) as a vat photopolymerization process using UV light to cure liquid resin layer by layer, while correctly explaining DMLS (Direct Metal Laser Sintering) as a powder bed fusion process that uses a laser to sinter metal powder particles together. It would address key differences in materials (photopolymer resins vs. metal powders), mechanical properties, post-processing requirements, applications, and typical build characteristics. The explanation would include specific technical details about layer resolution, build speeds, and design considerations unique to each process.</p>
+                            
+                            <p><strong>Low-Scoring Response:</strong> A response that confuses the basic principles of the processes, incorrectly describes the materials used, or provides generic information without addressing the specific characteristics and limitations of each technology.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Problem Task Metrics (Advanced Level) -->
+                <section class="content-section" data-level="advanced" id="problem-metrics">
+                    <h2>Problem Task Metrics</h2>
+                    <span class="complexity-badge complexity-advanced">Advanced</span>
+                    
+                    <p>Problem task metrics evaluate how well a GenAI model performs on specific types of AM-related problems or tasks. These metrics focus on the model's ability to address particular challenges in the additive manufacturing workflow.</p>
+                    
+                    <h3>Key Problem Categories</h3>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Design Generation</h3>
+                                <p class="card-text">Ability to create or optimize designs specifically for AM processes, considering manufacturability constraints.</p>
+                                <div class="metric-list">
+                                    <span class="metric-item">Design Feasibility</span>
+                                    <span class="metric-item">Manufacturability</span>
+                                    <span class="metric-item">Design Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Process Parameter Selection</h3>
+                                <p class="card-text">Ability to recommend appropriate process parameters based on material, geometry, and desired outcomes.</p>
+                                <div class="metric-list">
+                                    <span class="metric-item">Parameter Accuracy</span>
+                                    <span class="metric-item">Parameter Relationships</span>
+                                    <span class="metric-item">Process-Specific Knowledge</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Defect Analysis</h3>
+                                <p class="card-text">Ability to identify, categorize, and suggest remediation for AM defects based on descriptions or images.</p>
+                                <div class="metric-list">
+                                    <span class="metric-item">Defect Identification</span>
+                                    <span class="metric-item">Root Cause Analysis</span>
+                                    <span class="metric-item">Remediation Strategies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Cost Estimation</h3>
+                                <p class="card-text">Ability to provide reasonable cost estimates based on design, material, process, and production volume.</p>
+                                <div class="metric-list">
+                                    <span class="metric-item">Cost Factor Recognition</span>
+                                    <span class="metric-item">Estimation Accuracy</span>
+                                    <span class="metric-item">Scaling Considerations</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Material Selection</h3>
+                                <p class="card-text">Ability to recommend appropriate materials based on application requirements and process constraints.</p>
+                                <div class="metric-list">
+                                    <span class="metric-item">Property Understanding</span>
+                                    <span class="metric-item">Application Matching</span>
+                                    <span class="metric-item">Process Compatibility</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Workflow Optimization</h3>
+                                <p class="card-text">Ability to suggest improvements to AM workflows for efficiency, quality, and cost-effectiveness.</p>
+                                <div class="metric-list">
+                                    <span class="metric-item">Process Integration</span>
+                                    <span class="metric-item">Bottleneck Identification</span>
+                                    <span class="metric-item">Improvement Strategies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Assessment Approach</h3>
+                    <p>When evaluating problem task metrics, it's important to:</p>
+                    <ul>
+                        <li>Use standardized problem scenarios for consistent evaluation</li>
+                        <li>Consider both the technical correctness and practical applicability of solutions</li>
+                        <li>Evaluate across different levels of problem complexity</li>
+                        <li>Compare against established best practices or expert solutions</li>
+                        <li>Test with variations of the same problem to assess robustness</li>
+                    </ul>
+                </section>
+                
+                <!-- Scoring Matrix (Advanced Level) -->
+                <section class="content-section" data-level="advanced" id="scoring">
+                    <h2>Scoring Matrix Implementation</h2>
+                    <span class="complexity-badge complexity-advanced">Advanced</span>
+                    
+                    <p>The scoring matrix is a practical tool for systematically evaluating and comparing GenAI models across the metrics described above. It provides a structured approach to benchmarking that can be adapted to specific evaluation needs.</p>
+                    
+                    <h3>Matrix Structure</h3>
+                    <p>Our scoring matrix follows a systematic approach:</p>
+                    <ol>
+                        <li><strong>Metric Selection:</strong> Choose relevant metrics from the three categories based on your evaluation goals</li>
+                        <li><strong>Weight Assignment:</strong> Assign weights to metrics based on their importance for your specific use case</li>
+                        <li><strong>Scale Definition:</strong> Establish a consistent scoring scale (e.g., 1-5) with clear criteria for each score level</li>
+                        <li><strong>Test Case Development:</strong> Create standardized test cases or queries for evaluation</li>
+                        <li><strong>Scoring Process:</strong> Evaluate each model's responses according to the defined metrics and scale</li>
+                        <li><strong>Aggregation:</strong> Calculate weighted scores to produce overall performance ratings</li>
+                    </ol>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Matrix Implementation Example (Python)</span>
+                            <button class="copy-button">Copy</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code>import pandas as pd
+import numpy as np
+
+# Define the metrics, models, and weights
+metrics = {
+    'agnostic': ['accuracy', 'coherence', 'relevance', 'completeness', 'consistency'],
+    'domain': ['process_understanding', 'material_knowledge', 'design_for_am'],
+    'problem': ['design_generation', 'parameter_selection', 'defect_analysis']
+}
+
+models = ['GPT-4', 'GPT-3.5', 'Gemini', 'Llama 2']
+
+# Assign weights (example)
+weights = {
+    'accuracy': 0.8, 'coherence': 0.7, 'relevance': 0.9, 'completeness': 0.6, 'consistency': 0.7,
+    'process_understanding': 0.9, 'material_knowledge': 0.8, 'design_for_am': 0.9,
+    'design_generation': 0.7, 'parameter_selection': 0.8, 'defect_analysis': 0.8
+}
+
+# Create scoring matrix template
+def create_scoring_matrix():
+    all_metrics = []
+    for category, metric_list in metrics.items():
+        all_metrics.extend(metric_list)
+    
+    matrix = pd.DataFrame(index=all_metrics, columns=models)
+    return matrix
+
+# Example of filling the matrix with scores (1-5 scale)
+def fill_matrix_with_scores(matrix, scores_dict):
+    for metric in matrix.index:
+        for model in matrix.columns:
+            matrix.loc[metric, model] = scores_dict.get((metric, model), np.nan)
+    return matrix
+
+# Calculate weighted scores
+def calculate_weighted_scores(matrix, weights):
+    weighted_matrix = matrix.copy()
+    for metric in matrix.index:
+        weighted_matrix.loc[metric] = matrix.loc[metric] * weights.get(metric, 1.0)
+    
+    # Calculate category scores
+    category_scores = {}
+    for category, metric_list in metrics.items():
+        category_scores[category] = {}
+        for model in models:
+            category_scores[category][model] = weighted_matrix.loc[metric_list, model].mean()
+    
+    # Calculate overall scores
+    overall_scores = {}
+    for model in models:
+        overall_scores[model] = weighted_matrix[model].mean()
+    
+    return weighted_matrix, category_scores, overall_scores</code></pre>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Implementation (Basic Level) -->
+                <section class="content-section" data-level="basic" id="implementation">
+                    <h2>Implementing the Benchmarking Framework</h2>
+                    <span class="complexity-badge complexity-beginner">Beginner</span>
+                    
+                    <p>To implement this benchmarking framework for evaluating GenAI models in your AM applications, follow these steps:</p>
+                    
+                    <div class="implementation-stages">
+                        <div class="stage">
+                            <h4>Step 1: Define Your Evaluation Goals</h4>
+                            <ul>
+                                <li>Identify which AM tasks you need GenAI assistance with</li>
+                                <li>Determine the most important capabilities for your specific use cases</li>
+                                <li>Select relevant metrics from each category based on your priorities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stage">
+                            <h4>Step 2: Create Test Cases</h4>
+                            <ul>
+                                <li>Develop a set of standardized queries or problems</li>
+                                <li>Ensure they cover the range of AM tasks you identified</li>
+                                <li>Include varying levels of complexity</li>
+                                <li>Prepare reference solutions or criteria for evaluation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stage">
+                            <h4>Step 3: Set Up Evaluation Process</h4>
+                            <ul>
+                                <li>Implement the scoring matrix using spreadsheets or custom tools</li>
+                                <li>Set up consistent methods for interacting with each GenAI model</li>
+                                <li>Establish a systematic protocol for evaluation</li>
+                                <li>Consider using multiple evaluators for more robust results</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stage">
+                            <h4>Step 4: Analyze and Apply Results</h4>
+                            <ul>
+                                <li>Compare performance across models and metrics</li>
+                                <li>Identify strengths and weaknesses for each model</li>
+                                <li>Match model capabilities to your specific needs</li>
+                                <li>Use findings to guide GenAI implementation decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Source Code and Resources</h3>
+                    <p>For practical implementation of this benchmarking framework, you can access the following resources:</p>
+                    <ul>
+                        <li><a href="https://github.com/nowrin0102/IDETC-2024" target="_blank">GitHub Repository</a> with implementation code and examples</li>
+                        <li>Standardized test queries for AM applications</li>
+                        <li>Sample scoring templates and evaluation protocols</li>
+                    </ul>
+                    
+                    <div class="cta-box">
+                        <h3>Learn More About GenAI Benchmarking</h3>
+                        <p>For more comprehensive understanding of benchmarking and evaluation, explore these related resources:</p>
+                        <div class="cta-buttons">
+                            <a href="benchmarking-tools.html" class="btn">Benchmarking Tools</a>
+                            <a href="../resources/datasets.html" class="btn btn-outline">AM Datasets</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="index.html" class="pagination-item pagination-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <div>
+                            <div class="pagination-label">Previous</div>
+                            <div class="pagination-title">Tutorials</div>
+                        </div>
+                    </a>
+                    
+                    <a href="benchmarking-tools.html" class="pagination-item pagination-next">
+                        <div>
+                            <div class="pagination-label">Next</div>
+                            <div class="pagination-title">Benchmarking Tools</div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Depth Indicator -->
+        <div class="content-depth-indicator">
+            <!-- Markers will be generated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GenAI in Additive Manufacturing</h3>
+                    <p>An educational resource designed to introduce and guide users into generative AI applications within the additive manufacturing/3D printing industry.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../intro/index.html">Introduction</a></li>
+                        <li><a href="../core-technologies/index.html">Core Technologies</a></li>
+                        <li><a href="../tutorials/index.html">Tutorials</a></li>
+                        <li><a href="../case-studies/index.html">Case Studies</a></li>
+                        <li><a href="../resources/index.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>References</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://doi.org/10.1016/j.ijinfomgt.2023.102749" target="_blank">International Journal of Information Management</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> GenAI in Additive Manufacturing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/search.js"></script>
+</body>
+</html>
