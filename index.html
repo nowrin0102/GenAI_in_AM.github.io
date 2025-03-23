@@ -3,102 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Website</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .projects-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .general-projects, .specific-projects {
-            width: 48%;
-        }
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .project-button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .project-button img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 5px;
-        }
-        section {
-            background: #fff;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-    </style>
+    <meta name="description" content="Explore Generative AI in Additive Manufacturing - Educational resources for understanding and implementing GenAI in 3D printing and manufacturing">
+    <title>GenAI in Additive Manufacturing - Educational Resources</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <img src="images/header-image.jpg" alt="GenAI in AM" class="header-image">
-        <h1>Generative Artificial Intelligence (GenAI) in Additive Manufacturing (AM)</h1>
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span>GenAI in AM</span>
+            </a>
+            
+            <div class="search-container">
+                <form class="search-form" role="search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="search-results"></div>
+            </div>
+            
+            <button class="hamburger-menu" aria-label="Toggle menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="sections/intro/index.html">Introduction</a></li>
+                    <li><a href="sections/core-technologies/index.html">Core Technologies</a></li>
+                    <li><a href="sections/tutorials/index.html">Tutorials</a></li>
+                    <li><a href="sections/case-studies/index.html">Case Studies</a></li>
+                    <li><a href="sections/resources/index.html">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <section>
-            <h2>Goal</h2>
-            <p>Exploration of GenAI and foundation models in AM. This includes building AI models for AM and addressing key challenges such as design optimization, process monitoring, and defect detection.</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Generative AI in Additive Manufacturing</h1>
+                        <p>Explore the intersection of artificial intelligence and 3D printing technologies. Learn how generative AI is revolutionizing design, optimization, and production in additive manufacturing.</p>
+                        <div class="hero-buttons">
+                            <a href="sections/intro/index.html" class="btn btn-lg">Get Started</a>
+                            <a href="sections/resources/index.html" class="btn btn-outline btn-lg">Explore Resources</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/header-image.jpg" alt="GenAI in Additive Manufacturing" width="500" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Overview (Basic Level) -->
+        <section class="container content-section" data-level="basic">
+            <h2>Explore GenAI in Manufacturing</h2>
+            <p>Foundation models and Generative AI (GenAI) are rapidly evolving fields with transformative potential for additive manufacturing. This educational platform provides structured resources to help you understand, implement, and benefit from these technologies.</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">What is GenAI?</h3>
+                        <p class="card-text">Learn about generative artificial intelligence models, their capabilities, and fundamental principles that drive this technology.</p>
+                        <a href="sections/intro/what-is-genai.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Benefits in AM</h3>
+                        <p class="card-text">Discover how generative AI can enhance additive manufacturing through improved design, optimization, and production processes.</p>
+                        <a href="sections/intro/benefits-in-am.html" class="btn">Explore Benefits</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Current Landscape</h3>
+                        <p class="card-text">Get a comprehensive overview of the current state of GenAI applications in the additive manufacturing industry.</p>
+                        <a href="sections/intro/current-landscape.html" class="btn">View Landscape</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Areas of Focus (Intermediate Level) -->
+        <section class="container content-section" data-level="intermediate">
+            <h2>Main Areas of Focus</h2>
+            <p>Our content is structured into five comprehensive sections, each addressing different aspects of GenAI in AM:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-body">
+                        <span class="complexity-badge complexity-beginner">Beginner</span>
+                        <h3 class="card-title">Introduction to GenAI in Manufacturing</h3>
+                        <p class="card-text">Foundation concepts, terminology, and the evolving landscape of GenAI applications in manufacturing.</p>
+                        <a href="sections/intro/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <span class="complexity-badge complexity-intermediate">Intermediate</span>
+                        <h3 class="card-title">Core Technologies & Frameworks</h3>
+                        <p class="card-text">Deep dive into foundation models, fine-tuning approaches, and technical frameworks that power GenAI in AM.</p>
+                        <a href="sections/core-technologies/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <span class="complexity-badge complexity-intermediate">Intermediate</span>
+                        <h3 class="card-title">Implementation Tutorials</h3>
+                        <p class="card-text">Step-by-step guides for prompt engineering, model selection, and integrating GenAI solutions in AM workflows.</p>
+                        <a href="sections/tutorials/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <span class="complexity-badge complexity-advanced">Advanced</span>
+                        <h3 class="card-title">Case Studies & Applications</h3>
+                        <p class="card-text">Real-world examples of GenAI agents in AM, process optimization, and practical applications in industry.</p>
+                        <a href="sections/case-studies/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <span class="complexity-badge complexity-beginner">Beginner</span>
+                        <h3 class="card-title">Resources & Community</h3>
+                        <p class="card-text">Comprehensive collection of datasets, training resources, research papers, and community connections.</p>
+                        <a href="sections/resources/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details (Advanced Level) -->
+        <section class="container content-section" data-level="advanced">
+            <h2>Developing GenAI Models for AM</h2>
+            <p>To explore and develop foundation models for AM, researchers should follow a structured approach. Below are the key steps in this journey:</p>
+            
+            <div class="two-column">
+                <div>
+                    <h3>1. Identifying the AM Task</h3>
+                    <p>The first step is defining the problem scope: recognizing challenges in AM that could benefit from AI-driven solutions, such as design optimization, process parameter tuning, or defect detection.</p>
+                    
+                    <h3>2. Selecting a Base Model</h3>
+                    <p>Choosing the right AI model is essential. Options include Large Language Models (LLMs), diffusion models, and specialized tools like GPT-4o and DALL·E, each with different capabilities for AM applications.</p>
+                </div>
+                
+                <div>
+                    <h3>3. Assessing the Base Model</h3>
+                    <p>Evaluating the selected model's initial performance through zero-shot prompting before considering more advanced approaches like fine-tuning.</p>
+                    
+                    <h3>4. Prompt Engineering</h3>
+                    <p>If zero-shot performance is insufficient, advanced prompt techniques like few-shot prompting, Chain-of-Thought (CoT), and Retrieval-Augmented Generation (RAG) are explored.</p>
+                    
+                    <h3>5. Fine-Tuning</h3>
+                    <p>When prompt engineering is insufficient, model fine-tuning with AM-specific datasets is required for improved accuracy and domain adaptation.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="sections/core-technologies/foundation-models.html" class="btn btn-lg">Explore Foundation Models</a>
+            </div>
         </section>
         
-        <section>
-            <h2>Overview</h2>
-            <p>Foundation models and Generative AI (GenAI) are rapidly evolving fields. </p>
-            
-            <p><strong>Foundation Models</strong> are large pre-trained deep learning models trained on vast datasets using self-supervision.They Can be fine-tuned for various downstream tasks, including:Text generation (e.g., GPT-3), Image generation (e.g., DALL-E) and Classification and language understanding (e.g., BERT) etc.</p>
-            
-            <p3><strong>Generative AI (GenAI) Models</strong> are subsets of foundation models focused on content creation. They are used for creative and generative tasks. They create new content such as:Text (e.g., ChatGPT), Images (e.g., Stable Diffusion),Videos (e.g., Runway Gen-2) etc.  </p3>
-            <p><sup><a href="#citation">[1]</a></sup></p>
-            <p>GenAI has gained attention for its potential in various domains, including Additive Manufacturing (AM). This website serves as a resource for understanding how GenAI and foundation models can be leveraged to improve AM processes. It focuses on:</p>
-            
-            <ul>
-                <p>1. Building and exploring foundation models for AM</p>
-                <p>2. Developing GenAI-powered solutions for AM</p>
-                <p>3. Providing resources for adoption and implementation</p>
-            </ul>
-        </section>
-        <section>
-            <h2>Main Areas of Focus</h2>
-            <p>The content of this website is structured into three main areas:</p>
-            <h3><a href="foundation_models.html" class="link-button">1. Developing GenAI Models for AM</a></h3>
-            <p>This section outlines the process of developing GenAI models specifically for AM. It consists of various projects. Each shows a unique application of GenAI in manufacturing. The aim is to showcase how AI can enhance efficiency, reliability, and intelligence in AM.</p>
-            
-            <h3><a href="genai_agents.html" class="link-button">2. GenAI Agents: Application in AM and Manufacturing</a></h3>
-            <p>This section discusses the role of GenAI agents in AM and broader manufacturing processes. It features multiple projects that investigate the integration of AI-driven agents to optimize production workflows and decision-making.</p>
-            
-            <h3><a href="dataset.html" class="link-button"> 3. Resource Repository: AM Datasets for Gen AI Models</a></h3>
-            <p>This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models.</p>
-            
-            <h3><a href="misc_projects.html" class="link-button">4. Miscellaneous Projects</a></h3>
-            <p>This is the last  section covers  that covers any additional research related to GenAI and AM, such as:</p>
-            <ul>
-                <p>1. Identification of Artificial Narrow Intelligence (ANI) in AM</p>
-                <p>2. Linkages between ANI and foundation models</p>
-                <p>3. Text mining and resource gathering (e.g., relevant documents, literature reviews)</p>
-            </ul>
+        <!-- Content Depth Indicator -->
+        <div class="content-depth-indicator">
+            <!-- Markers will be generated by JavaScript -->
+        </div>
+    </main>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GenAI in Additive Manufacturing</h3>
+                    <p>An educational resource designed to introduce and guide users into generative AI applications within the additive manufacturing/3D printing industry.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="sections/intro/index.html">Introduction</a></li>
+                        <li><a href="sections/core-technologies/index.html">Core Technologies</a></li>
+                        <li><a href="sections/tutorials/index.html">Tutorials</a></li>
+                        <li><a href="sections/case-studies/index.html">Case Studies</a></li>
+                        <li><a href="sections/resources/index.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>References</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://doi.org/10.1016/j.ijinfomgt.2023.102749" target="_blank">International Journal of Information Management</a></li>
+                    </ul>
+                </div>
+            </div>
             
-        </section>
-    </div>
-    <h3>References</h3>
-    <p id="citation">
-        [1] Augmenting Research Methods with Foundation Models and Generative AI, 
-        <a href="https://doi.org/10.1016/j.ijinfomgt.2023.102749" target="_blank">International Journal of Information Management</a>, 2024.
-    </p>
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> GenAI in Additive Manufacturing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
