@@ -43,11 +43,15 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="../intro/index.html" class="active">Introduction</a></li>
+                    <li><a href="../Develop GenAI models/index_nowrin.html">Develop GenAI model</a></li>
+                    <li><a href="../GenAI Agent/index.html">GenAI Agent</a></li>
+                    <li><a href="../AM_dataset/datasets.html">Resources</a></li>
+                    <li><a href="../Miscellaneous/index.html">Miscellaneous</a></li>
+                    <!-- <li><a href="../intro/index.html" class="active">Introduction</a></li>
                     <li><a href="../core-technologies/index.html">Core Technologies</a></li>
                     <li><a href="../tutorials/index.html">Tutorials</a></li>
                     <li><a href="../case-studies/index.html">Case Studies</a></li>
-                    <li><a href="../resources/index.html">Resources</a></li>
+                    <li><a href="../resources/index.html">Resources</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -60,7 +64,7 @@
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="../../index.html">Home</a></li>
-                    <li><span class="current">Introduction</span></li>
+                    <li><span class="current">Develop GenAI model</span></li>
                 </ul>
             </div>
         </div>
@@ -70,8 +74,8 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Introduction to GenAI in Manufacturing</h1>
-                        <p>Understanding the fundamentals of generative artificial intelligence and its transformative potential in additive manufacturing.</p>
+                        <h1>Developing GenAI Model for AM</h1>
+                        <p>In order to explore and develop foundation models for AM, researchers should follow a structured approach.</p>
                     </div>
                     <div class="hero-image">
                         <img src="../../images/header-image.jpg" alt="GenAI and 3D Printing" width="500" height="300">
@@ -87,11 +91,11 @@
                 <div class="toc">
                     <h2 class="toc-title">In This Section</h2>
                     <ul class="toc-list">
-                        <li><a href="#what-is-genai">What is GenAI?</a></li>
-                        <li><a href="#benefits-in-am">Benefits in AM</a></li>
-                        <li><a href="#current-landscape">Current Landscape</a></li>
-                        <li><a href="#key-concepts">Key Concepts</a></li>
-                        <li><a href="#getting-started">Getting Started</a></li>
+                        <li><a href="#what-is-genai">Identifying the AM Task</a></li>
+                        <li><a href="#benefits-in-am">Selecting a Base Model</a></li>
+                        <li><a href="#current-landscape">Assessing the Base Model</a></li>
+                        <li><a href="#key-concepts">Prompt Engineering</a></li>
+                        <li><a href="#getting-started">Fine-Tuning</a></li>
                     </ul>
                 </div>
                 
@@ -109,12 +113,12 @@
             <div class="content">
                 <!-- Basic Introduction (Top Level) -->
                 <section class="content-section" data-level="basic" id="what-is-genai">
-                    <h2>What is Generative AI?</h2>
-                    <span class="complexity-badge complexity-beginner">Beginner</span>
+                    <h2>1. Identifying the AM Task</h2>
+                    <!-- <span class="complexity-badge complexity-beginner">Beginner</span> -->
                     
-                    <p>Generative AI represents a subset of artificial intelligence technologies focused on creating new content rather than simply analyzing existing data. These models can generate text, images, 3D designs, and other media that mimic human-created content.</p>
+                    <p>The first step is defining the problem scope: recognizing challenges in AM that could benefit from AI-driven solutions, such as design optimization, process parameter tuning, or defect detection.</p>
                     
-                    <div class="key-points">
+                    <!-- <div class="key-points">
                         <h3>Key Points:</h3>
                         <ul>
                             <li><strong>Content Creation:</strong> Unlike traditional AI that focuses on classification or prediction, GenAI can create entirely new content.</li>
@@ -122,19 +126,19 @@
                             <li><strong>Multimodal Capabilities:</strong> Modern GenAI can work across different types of data (text, images, 3D models).</li>
                             <li><strong>Expanding Applications:</strong> Rapidly growing use cases across industries, particularly in design and manufacturing.</li>
                         </ul>
-                    </div>
+                    </div> -->
                     
-                    <a href="what-is-genai.html" class="btn">Learn More About GenAI</a>
+                    <a href="benchmarking-metrics.html" class="btn">Benchmatking Metrics</a>
                 </section>
                 
                 <!-- Benefits in AM (Top Level) -->
                 <section class="content-section" data-level="basic" id="benefits-in-am">
-                    <h2>Benefits in Additive Manufacturing</h2>
-                    <span class="complexity-badge complexity-beginner">Beginner</span>
+                    <h2>2. Selecting a Base Model</h2>
+                    <!-- <span class="complexity-badge complexity-beginner">Beginner</span> -->
                     
-                    <p>The integration of generative AI with additive manufacturing creates powerful synergies that can transform the entire production lifecycle, from design conception to final quality control.</p>
+                    <p>Choosing the right AI model is essential. Options include Large Language Models (LLMs), diffusion models, and specialized tools like GPT-4o and DALL·E, each with different capabilities for AM applications.</p>
                     
-                    <div class="card-grid">
+                    <!-- <div class="card-grid">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">Design Optimization</h3>
@@ -155,19 +159,19 @@
                                 <p class="card-text">AI systems can identify potential defects during the printing process, enabling real-time adjustments and quality assurance.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
-                    <a href="benefits-in-am.html" class="btn">Explore All Benefits</a>
+                    <a href="foundation-models.html" class="btn">Benchmarking Tools</a>
                 </section>
                 
                 <!-- Current Landscape (Mid Level) -->
                 <section class="content-section" data-level="intermediate" id="current-landscape">
-                    <h2>Current Landscape</h2>
-                    <span class="complexity-badge complexity-intermediate">Intermediate</span>
+                    <h2>3. Assessing the Base Model</h2>
+                    <!-- <span class="complexity-badge complexity-intermediate">Intermediate</span> -->
                     
-                    <p>Foundation models and Generative AI (GenAI) are rapidly evolving fields with growing applications in additive manufacturing. Understanding the current state of these technologies provides context for their potential impact.</p>
+                    <p>Evaluating the selected model's initial performance through zero-shot prompting before considering more advanced approaches like fine-tuning.</p>
                     
-                    <h3>Foundation Models in AM</h3>
+                    <!-- <h3>Foundation Models in AM</h3>
                     <p>Large pre-trained deep learning models trained on vast datasets using self-supervision can be fine-tuned for various AM-specific tasks, including:</p>
                     <ul>
                         <li>Text-to-CAD generation (e.g., creating 3D models from textual descriptions)</li>
@@ -183,19 +187,19 @@
                         <li>Topology optimization systems</li>
                         <li>Process simulation models</li>
                         <li>Material design systems</li>
-                    </ul>
+                    </ul> -->
                     
-                    <a href="current-landscape.html" class="btn">View Full Landscape Analysis</a>
+                    <!-- <a href="current-landscape.html" class="btn">View Full Landscape Analysis</a> -->
                 </section>
                 
                 <!-- Key Concepts (Advanced Level) -->
                 <section class="content-section" data-level="advanced" id="key-concepts">
-                    <h2>Key Concepts</h2>
-                    <span class="complexity-badge complexity-advanced">Advanced</span>
+                    <h2>4. Prompt Engineering</h2>
+                    <!-- <span class="complexity-badge complexity-advanced">4. Prompt Engineering</span> -->
                     
-                    <p>To fully understand the potential of GenAI in AM, several technical concepts must be grasped:</p>
+                    <p>If zero-shot performance is insufficient, advanced prompt techniques like few-shot prompting, Chain-of-Thought (CoT), and Retrieval-Augmented Generation (RAG) are explored.</p>
                     
-                    <div class="two-column">
+                    <!-- <div class="two-column">
                         <div>
                             <h3>Self-Supervision and Pre-Training</h3>
                             <p>The process by which foundation models learn from vast unlabeled datasets before specific fine-tuning. This allows models to develop general representations that can be adapted to specialized tasks.</p>
@@ -227,22 +231,23 @@
 - Include mounting holes (4mm diameter) at each corner</code></pre>
                         </div>
                     </div>
-                </section>
+                </section> -->
+                <a href="prompt-engineering.html" class="btn">Understanding Prompt Engineering</a>
                 
-                <!-- Getting Started (Mid Level) -->
+                <!-- Getting Started (Mid Level) --> 
                 <section class="content-section" data-level="intermediate" id="getting-started">
-                    <h2>Getting Started with GenAI in AM</h2>
-                    <span class="complexity-badge complexity-intermediate">Intermediate</span>
+                    <h2>5. Fine-Tuning</h2>
+                    <!-- <span class="complexity-badge complexity-intermediate">Intermediate</span> -->
                     
-                    <p>Ready to begin exploring GenAI applications in additive manufacturing? Here's how to get started:</p>
-                    
-                    <ol>
+                    <p>When prompt engineering is insufficient, model fine-tuning with AM-specific datasets is required for improved accuracy and domain adaptation.</p>
+                    <a href="Fine_tune.html" class="btn">Understanding fine-tune Approach</fine-tune></a>
+                    <!-- <ol>
                         <li><strong>Understand the Fundamentals:</strong> Explore our <a href="what-is-genai.html">What is GenAI?</a> guide for a comprehensive introduction.</li>
                         <li><strong>Identify Potential Applications:</strong> Review the <a href="benefits-in-am.html">Benefits in AM</a> section to identify areas in your workflow that could benefit from GenAI.</li>
                         <li><strong>Explore Core Technologies:</strong> Dive into our <a href="../core-technologies/index.html">Core Technologies</a> section to understand the underlying models and frameworks.</li>
                         <li><strong>Follow Tutorials:</strong> Apply what you've learned with our step-by-step <a href="../tutorials/index.html">Implementation Tutorials</a>.</li>
                         <li><strong>Study Case Studies:</strong> Learn from real-world examples in our <a href="../case-studies/index.html">Case Studies</a> section.</li>
-                    </ol>
+                    </ol> -->
                     
                     <div class="cta-box">
                         <h3>Ready to Explore Further?</h3>
@@ -250,6 +255,9 @@
                         <div class="cta-buttons">
                             <a href="../core-technologies/foundation-models.html" class="btn">Explore Foundation Models</a>
                             <a href="../tutorials/prompt-engineering.html" class="btn btn-outline">Learn Prompt Engineering</a>
+                            <a href="current-landscape.html" class="btn">View Full Landscape Analysis</a>
+                            <a href="what-is-genai.html" class="btn">Learn More About GenAI</a>
+                            <a href="benefits-in-am.html" class="btn">Explore All Benefits</a>
                         </div>
                     </div>
                 </section>
@@ -267,10 +275,11 @@
                         </div>
                     </a>
                     
-                    <a href="what-is-genai.html" class="pagination-item pagination-next">
+                    <!-- <a href="what-is-genai.html" class="pagination-item pagination-next"> -->
+                    <a href="genai_agents.html" class="pagination-item pagination-next"> 
                         <div>
                             <div class="pagination-label">Next</div>
-                            <div class="pagination-title">What is GenAI?</div>
+                            <div class="pagination-title">GenAI Agent</div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -293,17 +302,21 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>GenAI in Additive Manufacturing</h3>
-                    <p>An educational resource designed to introduce and guide users into generative AI applications within the additive manufacturing/3D printing industry.</p>
+                    <p>An educational resource designed to introduce and guide users into generative AI applications within the additive manufacturing.</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../intro/index.html">Introduction</a></li>
+                        <!-- <li><a href="../intro/index.html">Introduction</a></li>
                         <li><a href="../core-technologies/index.html">Core Technologies</a></li>
                         <li><a href="../tutorials/index.html">Tutorials</a></li>
                         <li><a href="../case-studies/index.html">Case Studies</a></li>
-                        <li><a href="../resources/index.html">Resources</a></li>
+                        <li><a href="../resources/index.html">Resources</a></li> -->
+                        <li><a href="../Develop GenAI models/index_nowrin.html">Develop GenAI model</a></li>
+                        <li><a href="../GenAI Agent/index.html">GenAI Agent</a></li>
+                        <li><a href="../AM_dataset/datasets.html">Resources</a></li>
+                        <li><a href="../Miscellaneous/index.html">Miscellaneous</a></li>
                     </ul>
                 </div>
                 
