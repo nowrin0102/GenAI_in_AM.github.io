@@ -1,0 +1,248 @@
+/* 
+ * GenAI in Additive Manufacturing - Main Styles
+ * This is the main stylesheet containing global styles and variables
+ */
+
+:root {
+  /* Color Variables */
+  --primary-blue: #1a73e8;
+  --primary-blue-light: #4285f4;
+  --primary-blue-lighter: #8ab4f8;
+  
+  --secondary-dark: #202124;
+  --secondary-medium: #5f6368;
+  --secondary-light: #dadce0;
+  
+  --accent-yellow: #fbbc04;
+  --accent-green: #34a853;
+  
+  --background-white: #ffffff;
+  --background-light: #f8f9fa;
+  
+  /* Typography Variables */
+  --font-heading: 'Open Sans', 'Roboto', sans-serif;
+  --font-body: 'Open Sans', 'Roboto', sans-serif;
+  --font-code: 'Roboto Mono', monospace;
+  
+  /* Spacing Variables */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Container width */
+  --container-width: 1200px;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Box Shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Typography */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  color: var(--secondary-dark);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-light);
+  margin: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  color: var(--secondary-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-blue-light);
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-xl);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Code blocks */
+pre, code {
+  font-family: var(--font-code);
+  background-color: var(--secondary-light);
+  border-radius: var(--border-radius-sm);
+}
+
+code {
+  padding: 0.1em 0.4em;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Main content area */
+main {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mb-5 {
+  margin-bottom: var(--spacing-xl);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top: var(--spacing-xs);
+}
+
+.mt-2 {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-md);
+}
+
+.mt-4 {
+  margin-top: var(--spacing-lg);
+}
+
+.mt-5 {
+  margin-top: var(--spacing-xl);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide elements visually but keep them available for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Badge for content complexity */
+.complexity-badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  color: var(--background-white);
+  margin-right: var(--spacing-sm);
+}
+
+.complexity-beginner {
+  background-color: var(--accent-green);
+}
+
+.complexity-intermediate {
+  background-color: var(--accent-yellow);
+}
+
+.complexity-advanced {
+  background-color: var(--primary-blue);
+}

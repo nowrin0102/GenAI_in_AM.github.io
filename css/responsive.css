@@ -1,0 +1,229 @@
+/* 
+ * GenAI in Additive Manufacturing - Responsive Styles
+ * This file contains all responsive breakpoints and device-specific styles
+ */
+
+/* Base mobile styles are in style.css */
+/* This file contains adjustments for larger screens */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 540px;
+  }
+  
+  /* Adjust card layout for small screens */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 720px;
+  }
+  
+  h1 {
+    font-size: 2.75rem;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  /* Navigation changes for tablets */
+  .navbar .hamburger-menu {
+    display: none;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .navbar .nav-links a {
+    margin-left: 1.5rem;
+    padding: 0;
+  }
+  
+  /* Two column layout for content sections */
+  .two-column {
+    display: flex;
+    gap: var(--spacing-lg);
+  }
+  
+  .two-column > * {
+    flex: 1;
+  }
+  
+  /* Adjust card layout for medium screens */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Hero section layout improvements */
+  .hero-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-text {
+    flex: 1;
+    text-align: left;
+    padding-right: var(--spacing-lg);
+  }
+  
+  .hero-image {
+    flex: 1;
+  }
+  
+  /* Footer multi-column */
+  footer .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  /* Adjust card layout for large screens */
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Enable sidebar layout for documentation pages */
+  .with-sidebar {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+  
+  .sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-md));
+    align-self: start;
+    max-height: calc(100vh - var(--header-height) - var(--spacing-md) * 2);
+    overflow-y: auto;
+    padding-right: var(--spacing-md);
+  }
+  
+  /* Three column layout for wide screens */
+  .three-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-width);
+  }
+  
+  /* Wider content area for documentation */
+  .with-sidebar {
+    grid-template-columns: 280px 1fr;
+  }
+  
+  /* Extra space for very large screens */
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1320px;
+    }
+  }
+}
+
+/* Print styles for better document printing */
+@media print {
+  :root {
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1.25rem;
+  }
+  
+  html {
+    font-size: 12pt;
+  }
+  
+  body {
+    background: none;
+    color: black;
+  }
+  
+  .navbar, 
+  .search-container,
+  .sidebar,
+  footer {
+    display: none !important;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    font-weight: normal;
+  }
+  
+  /* Skip URLs for certain links */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+  
+  p, blockquote, ul, ol, dl, table {
+    page-break-inside: avoid;
+  }
+  
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+}
