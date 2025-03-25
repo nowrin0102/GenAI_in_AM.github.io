@@ -169,8 +169,11 @@
             <input id="userInput" type="text">
             <button onclick="sendMessage()">Send</button>
         </div>
-
-        <script>
+        
+        <!-- <script>
+            require('dotenv').config();
+            console.log(process.env);
+            
             async function sendMessage() {
                 let input = document.getElementById("userInput").value;
                 let chatbox = document.getElementById("chatbox");
@@ -184,11 +187,12 @@
                 chatbox.
                 scrollTop = chatbox.scrollHeight;  // Scroll to the bottom
             }
+            // require('dotenv').config();
 // "02d33ffc524f45b5af582c6c902cb23e"
             async function getAIResponse(message) {
                 // let apiKey = "42cEIKjJE2kUiB1xPrwixrwnz6DC";
-                require('dotenv').config();
-                const apiKey = process.env.API_KEY;
+                // const apiKey = process.env.API_KEY;
+                let apiKey = process.env.API_KEY;
                 // let apiKey = AZURE_OPENAI_API_KEY;
                 let endpoint = "https://nowrinimage.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"; // Replace with your Azure OpenAI Endpoint
                 let deployment = "gpt-4o-mini"; // Replace with your Azure GPT Deployment Name
@@ -212,9 +216,9 @@
                 let data = await response.json();
                 return data.choices[0].message.content;
             }
-        </script>
+        </script> -->
 
-        
+        <script src="index.js"></script>
         <h2>Examples from the Dataset</h2> 
         <p>Design-related dataset:</p>
         <img src="images/generate.PNG" alt="Design Dataset" class="project-image">
@@ -250,5 +254,9 @@
         <!-- <a href="dataset.html" class="button">Back to Home</a> -->
 
     </div>
+    <!-- <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type a message" />
+    <button onclick="sendMessage()">Send</button> -->
+    <!-- <script src="index.js"></script> -->
 </body>
 </html>
