@@ -10,6 +10,7 @@ app.use(express.json());  // Middleware to parse JSON
 app.use(cors());          // Allow cross-origin requests
 
 const apiKey = process.env.API_KEY;  // Fetch API key from .env
+console.log(apiKey)
 
 // Route to handle AI message
 app.post('/api/getAIResponse', async (req, res) => {
