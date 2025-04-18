@@ -71,6 +71,16 @@ Foundational content for beginners to understand the basic concepts, terminology
 - **Benefits in AM** - How generative AI enhances additive manufacturing through improved design, optimization, and production
 - **Current Landscape** - Overview of the present state of GenAI applications in the additive manufacturing industry
 
+### Develop GenAI model
+
+Step-by-step guides for practical implementation of GenAI in AM workflows:
+
+- **Task Selection** - Understanding and defining the problem scope and recognizing challenges for AM
+- **Model Selection** - Technical details of transformer architectures, attention mechanisms, and other relevant AI structures
+- **Benchmarking Metrics** - Methods for evaluating GenAI model performance in AM contexts
+- **Prompt Engineering** - Techniques for crafting effective prompts for AM applications
+- **Fine-Tuning Approaches** - Methods for adapting general models to AM-specific tasks and domains
+
 ### Core Technologies
 
 Technical deep dives into the foundation models, fine-tuning approaches, and frameworks that power GenAI in AM:
