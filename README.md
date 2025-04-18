@@ -23,9 +23,9 @@ Whether you're new to AI concepts or an experienced practitioner seeking AM-spec
 - [Educational Content Structure](#educational-content-structure)
   - [Introduction to GenAI in AM](#introduction-to-genai-in-am)
   <!-- - [Core Technologies](#core-technologies) -->
-  - [Develop GenAI model](#Develop GenAI model)
+  - [Develop GenAI model](#Develop-GenAI-model)
   <!-- - [Develop GenAI model](#implementation-tutorials) -->
-  - [GenAI agents](#GenAI agents)
+  - [GenAI agents](#GenAI-agents)
   - [Resources & Community](#resources--community)
 - [Learning Paths](#learning-paths)
   - [Beginner Path](#beginner-path)
