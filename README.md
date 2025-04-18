@@ -26,8 +26,10 @@ Whether you're new to AI concepts or an experienced practitioner seeking AM-spec
   - [Develop GenAI model](#Develop-GenAI-model)
   <!-- - [Develop GenAI model](#implementation-tutorials) -->
   - [GenAI agents](#GenAI-agents)
-  - [Resources & Community](#resources--community)
-- [Learning Paths](#learning-paths)
+  - [Resources](#Resources)
+  - [Miscellaneous](#Miscellaneous)
+  <!-- - [Resources & Community](#resources--community) -->
+<!-- - [Learning Paths](#learning-paths) -->
   - [Beginner Path](#beginner-path)
   - [Intermediate Path](#intermediate-path)
   - [Advanced Path](#advanced-path)
@@ -109,24 +111,36 @@ Real-world examples of GenAI implementation in various aspects of additive manuf
 - **Process Optimization** - Case studies on using GenAI for improving AM process parameters
 - **Defect Detection** - Applications in quality control and anomaly detection
 - **Generative Design** - Examples of AI-driven design creation for AM constraints -->
+### Resources
 
-### Resources & Community
+Comprehensive collection of training, bencmarking, evelaution datasets connections:
+
+- **Datasets** - AM-specific datasets for training and fine-tuning GenAI models
+### Miscellaneous
+
+Comprehensive collection of training resources, research papers, and community connections:
+
+- **Research Publications** - Key papers and academic resources at the intersection of GenAI and AM
+- **Community Projects** - Open-source initiatives and collaborative efforts
+- **Learning Resources** - Additional educational materials and courses
+
+<!-- ### Resources & Community
 
 Comprehensive collection of datasets, training resources, research papers, and community connections:
 
 - **Datasets** - AM-specific datasets for training and fine-tuning GenAI models
 - **Research Publications** - Key papers and academic resources at the intersection of GenAI and AM
 - **Community Projects** - Open-source initiatives and collaborative efforts
-- **Learning Resources** - Additional educational materials and courses
+- **Learning Resources** - Additional educational materials and courses -->
 
-### Implementation Tutorials
+<!-- ### Implementation Tutorials
 
 Step-by-step guides for practical implementation of GenAI in AM workflows:
 
 - **Prompt Engineering** - Techniques for crafting effective prompts for AM applications
 - **Benchmarking Metrics** - Methods for evaluating GenAI model performance in AM contexts
 - **Benchmarking Tools** - Software and frameworks for quantitative assessment of models
-- **Integration Guides** - Instructions for incorporating GenAI into existing AM software and workflows
+- **Integration Guides** - Instructions for incorporating GenAI into existing AM software and workflows -->
 
 ## Learning Paths
 
