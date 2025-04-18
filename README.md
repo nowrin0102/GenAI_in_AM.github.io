@@ -22,9 +22,10 @@ Whether you're new to AI concepts or an experienced practitioner seeking AM-spec
 - [Executive Summary](#executive-summary)
 - [Educational Content Structure](#educational-content-structure)
   - [Introduction to GenAI in AM](#introduction-to-genai-in-am)
-  - [Core Technologies](#core-technologies)
-  - [Implementation Tutorials](#implementation-tutorials)
-  - [Case Studies & Applications](#case-studies--applications)
+  <!-- - [Core Technologies](#core-technologies) -->
+  - [Develop GenAI model](#Develop GenAI model)
+  <!-- - [Develop GenAI model](#implementation-tutorials) -->
+  - [GenAI agents](#GenAI agents)
   - [Resources & Community](#resources--community)
 - [Learning Paths](#learning-paths)
   - [Beginner Path](#beginner-path)
@@ -65,9 +66,9 @@ The educational content is organized into five comprehensive sections, each addr
 
 ### Introduction to GenAI in AM
 
-Foundational content for beginners to understand the basic concepts, terminology, and evolving landscape of GenAI applications in manufacturing:
+Foundational content for beginners to understand the basic concepts, terminology, and evolving landscape of GenAI applications in manufacturing. Also Technical deep dives into the foundation models and frameworks that power GenAI in AM:
 
-- **What is GenAI?** - Fundamentals of generative artificial intelligence, its capabilities, and core principles
+- **What is GenAI?** - Fundamentals of generative artificial intelligence, its capabilities, and core principles.Understanding large language models, diffusion models, and their adaptation for AM.
 - **Benefits in AM** - How generative AI enhances additive manufacturing through improved design, optimization, and production
 - **Current Landscape** - Overview of the present state of GenAI applications in the additive manufacturing industry
 
@@ -81,31 +82,33 @@ Step-by-step guides for practical implementation of GenAI in AM workflows:
 - **Prompt Engineering** - Techniques for crafting effective prompts for AM applications
 - **Fine-Tuning Approaches** - Methods for adapting general models to AM-specific tasks and domains
 
-### Core Technologies
+### GenAI agents
+
+GenAI agent application and  implementation in various aspects of additive manufacturing:
+
+- **Agent Foundations** - Fundamental concepts of GenAI agents and their potential in AM
+- **Process Optimization** - Case studies on using GenAI for improving AM process parameters
+- **Defect Detection** - Applications in quality control and anomaly detection
+- **Generative Design** - Examples of AI-driven design creation for AM constraints
+
+<!-- ### Core Technologies
 
 Technical deep dives into the foundation models, fine-tuning approaches, and frameworks that power GenAI in AM:
 
 - **Foundation Models** - Understanding large language models, diffusion models, and their adaptation for AM
 - **Model Architectures** - Technical details of transformer architectures, attention mechanisms, and other relevant AI structures
-- **Fine-Tuning Approaches** - Methods for adapting general models to AM-specific tasks and domains
+- **Fine-Tuning Approaches** - Methods for adapting general models to AM-specific tasks and domains -->
 
-### Implementation Tutorials
 
-Step-by-step guides for practical implementation of GenAI in AM workflows:
 
-- **Prompt Engineering** - Techniques for crafting effective prompts for AM applications
-- **Benchmarking Metrics** - Methods for evaluating GenAI model performance in AM contexts
-- **Benchmarking Tools** - Software and frameworks for quantitative assessment of models
-- **Integration Guides** - Instructions for incorporating GenAI into existing AM software and workflows
-
-### Case Studies & Applications
+<!-- ### Case Studies & Applications
 
 Real-world examples of GenAI implementation in various aspects of additive manufacturing:
 
 - **Agent Foundations** - Fundamental concepts of GenAI agents and their potential in AM
 - **Process Optimization** - Case studies on using GenAI for improving AM process parameters
 - **Defect Detection** - Applications in quality control and anomaly detection
-- **Generative Design** - Examples of AI-driven design creation for AM constraints
+- **Generative Design** - Examples of AI-driven design creation for AM constraints -->
 
 ### Resources & Community
 
@@ -115,6 +118,15 @@ Comprehensive collection of datasets, training resources, research papers, and c
 - **Research Publications** - Key papers and academic resources at the intersection of GenAI and AM
 - **Community Projects** - Open-source initiatives and collaborative efforts
 - **Learning Resources** - Additional educational materials and courses
+
+### Implementation Tutorials
+
+Step-by-step guides for practical implementation of GenAI in AM workflows:
+
+- **Prompt Engineering** - Techniques for crafting effective prompts for AM applications
+- **Benchmarking Metrics** - Methods for evaluating GenAI model performance in AM contexts
+- **Benchmarking Tools** - Software and frameworks for quantitative assessment of models
+- **Integration Guides** - Instructions for incorporating GenAI into existing AM software and workflows
 
 ## Learning Paths
 
