@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agent Foundations in Additive Manufacturing - Understanding the fundamental concepts of GenAI agents for manufacturing applications">
+    <title>Agent Foundations | GenAI in Additive Manufacturing</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <span>GenAI in AM</span>
+            </a>
+            
+            <div class="search-container">
+                <form class="search-form" role="search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="search-results"></div>
+            </div>
+            
+            <button class="hamburger-menu" aria-label="Toggle menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../Develop GenAI models/index_nowrin.html">Develop GenAI model</a></li>
+                    <li><a href="../GenAI Agent/index.html">GenAI Agent</a></li>
+                    <li><a href="../AM_dataset/datasets.html">Resources</a></li>
+                    <li><a href="../Miscellaneous/index.html">Miscellaneous</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="index.html">GenAI Agent</a></li>
+                    <li><span class="current">Agent Foundations</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Generative AI Agent Application for Manufacturing</h1>
+                        <p>Resource of GenAI agent development in additive manufacturing contexts.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="../../images/general-project1.jpg" alt="GenAI Agent Systems in Manufacturing" width="500" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content with Sidebar -->
+        <div class="container with-sidebar">
+            <!-- Sidebar with Table of Contents -->
+            <aside class="sidebar">
+                <div class="toc">
+                    <h2 class="toc-title">On This Page</h2>
+                    <ul class="toc-list">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#Design">Design</a></li>
+                        <!-- <li><a href="#traditional-vs-genai">Traditional vs. GenAI Agents</a></li>
+                        <li><a href="#agent-capabilities">Agent Capabilities</a></li>
+                        <li><a href="#applications">Manufacturing Applications</a></li>
+                        <li><a href="#implementation">Implementation Considerations</a></li>
+                        <li><a href="#research">Research & Publications</a></li> -->
+                    </ul>
+                </div>
+                
+                <div class="section-navigation">
+                    <h3>Related Topics</h3>
+                    <ul class="toc-list">
+                        <li><a href="genai-agents.html">GenAI Agents in AM</a></li>
+                        <li><a href="../tutorials/prompt-engineering.html">Prompt Engineering</a></li>
+                        <li><a href="../core-technologies/foundation-models.html">Foundation Models</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="content">
+                <!-- Overview (Basic Level) -->
+                <section class="content-section" data-level="basic" id="overview">
+                    <h2>Understanding Agent-Based Systems</h2>
+                    <!-- <span class="complexity-badge complexity-beginner">Beginner</span> -->
+                    
+                    <p>Design is an improtant part in AM. if the design, material selection, path planning is wrong, the product will be wrong</p>
+                    
+                    <!-- <p>This research explores how Generative AI can enhance agent-based systems for manufacturing applications, with a particular focus on additive manufacturing processes.</p> -->
+                    
+                    <!-- <div class="key-points">
+                        <h3>Key Concepts:</h3>
+                        <ul>
+                            <li><strong>Agent Autonomy:</strong> The ability to act independently to achieve goals</li>
+                            <li><strong>Multi-Agent Systems:</strong> Networks of agents collaborating to solve complex problems</li>
+                            <li><strong>Generative Capabilities:</strong> Creating new solutions rather than selecting from predefined options</li>
+                            <li><strong>Contextual Understanding:</strong> Processing and responding to complex manufacturing scenarios</li>
+                            <li><strong>Adaptability:</strong> Learning from feedback and improving performance over time</li>
+                        </ul>
+                    </div> -->
+                </section>
+                
+                <!-- Traditional vs. GenAI Agents (Basic Level) -->
+                <section class="content-section" data-level="basic" id="material-selection">
+                    <h2>Material selcetion is crucial part for AM. In the below we provide 8 material based on differnt criterian</h2>
+                    <!-- <span class="complexity-badge complexity-beginner">Beginner</span> -->
+                    
+                    <!-- <p>Traditional agents, while precise and reliable for structured tasks, face limitations in flexibility and adaptability to dynamic or unstructured environments. A new type of agent, the Generative Artificial Intelligence (GenAI) agent, dramatically alters the landscape of agent-based systems by offering enhanced capabilities.</p> -->
+                    <table border="1" cellspacing="0" cellpadding="5">
+                        <caption>Table 1: Material Properties</caption>
+                        <tr>
+                          <th>S. No</th>
+                          <th>Material</th>
+                          <th>D (g/cm³)</th>
+                          <th>MP (°C)</th>
+                          <th>SP.H (J/(kgK))</th>
+                          <th>TYS (MPa)</th>
+                          <th>MoE (GPa)</th>
+                          <th>TC (W/(mK))</th>
+                          <th>Cost /Kg</th>
+                          <th>BH</th>
+                          <th>ER (lx-m)</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>H13</td>
+                          <td>7.8</td>
+                          <td>1427</td>
+                          <td>460</td>
+                          <td>1380</td>
+                          <td>215</td>
+                          <td>28.6</td>
+                          <td>190</td>
+                          <td>207</td>
+                          <td>0.52</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>316L</td>
+                          <td>8</td>
+                          <td>1400</td>
+                          <td>500</td>
+                          <td>170</td>
+                          <td>193</td>
+                          <td>16.3</td>
+                          <td>380</td>
+                          <td>217</td>
+                          <td>0.74</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Ti6Al4V</td>
+                          <td>4.42</td>
+                          <td>1649</td>
+                          <td>560</td>
+                          <td>910</td>
+                          <td>114</td>
+                          <td>7.2</td>
+                          <td>1990</td>
+                          <td>334</td>
+                          <td>1.78</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>AlSi12Cu2Fe</td>
+                          <td>2.67</td>
+                          <td>585</td>
+                          <td>963</td>
+                          <td>140</td>
+                          <td>74.5</td>
+                          <td>180</td>
+                          <td>650</td>
+                          <td>100</td>
+                          <td>0.075</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>AlSi10Mg</td>
+                          <td>2.58</td>
+                          <td>600</td>
+                          <td>900</td>
+                          <td>190</td>
+                          <td>70</td>
+                          <td>150</td>
+                          <td>280</td>
+                          <td>75</td>
+                          <td>0.05943</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Inconel 718</td>
+                          <td>8.192</td>
+                          <td>1426</td>
+                          <td>435</td>
+                          <td>550</td>
+                          <td>204.9</td>
+                          <td>11.4</td>
+                          <td>3000</td>
+                          <td>363</td>
+                          <td>1.182</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>Hastelloy X</td>
+                          <td>8.22</td>
+                          <td>1316</td>
+                          <td>784</td>
+                          <td>385</td>
+                          <td>205</td>
+                          <td>9.1</td>
+                          <td>4000</td>
+                          <td>230</td>
+                          <td>1.18</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>CuSn10</td>
+                          <td>8.8</td>
+                          <td>999</td>
+                          <td>380</td>
+                          <td>180</td>
+                          <td>130</td>
+                          <td>50</td>
+                          <td>600</td>
+                          <td>70</td>
+                          <td>0.16</td>
+                        </tr>
+                      </table>
+                    
+                    <p>Powered by increasingly sophisticated GenAI models, GenAI agents can integrate multiple roles, enhance automation, and introduce capabilities beyond the scope of traditional agents, establishing themselves as critical enablers for modern manufacturing ecosystems.</p>
+                </section>
+                
+                <!-- Agent Capabilities (Intermediate Level) -->
+                <section class="content-section" data-level="intermediate" id="agent-capabilities">
+                    <h2>GenAI Agent Capabilities</h2>
+                    <!-- <span class="complexity-badge complexity-intermediate">Intermediate</span> -->
+                    
+                    <p>GenAI agents bring several distinctive capabilities to manufacturing environments that differentiate them from traditional agent-based systems:</p>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3>Versatility and Adaptability</h3>
+                            <p>GenAI agents demonstrate remarkable versatility across diverse manufacturing scenarios:</p>
+                            <ul>
+                                <li>Handling multiple types of manufacturing tasks without reprogramming</li>
+                                <li>Adapting to changing manufacturing requirements and constraints</li>
+                                <li>Transferring knowledge between related manufacturing domains</li>
+                                <li>Continuous improvement through operational feedback</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3>Contextual Understanding</h3>
+                            <p>The ability to understand complex manufacturing contexts is crucial:</p>
+                            <ul>
+                                <li>Interpreting technical specifications and requirements</li>
+                                <li>Understanding relationships between manufacturing parameters</li>
+                                <li>Recognizing implicit constraints and domain knowledge</li>
+                                <li>Maintaining awareness of the overall manufacturing process</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3>Unstructured Data Handling</h3>
+                            <p>Processing diverse data types common in manufacturing environments:</p>
+                            <ul>
+                                <li>Natural language descriptions and requirements</li>
+                                <li>Technical documentation and knowledge bases</li>
+                                <li>Visual data from inspection systems and cameras</li>
+                                <li>Time-series data from sensors and monitoring systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3>Generative Problem-Solving</h3>
+                            <p>Creating novel solutions rather than selecting from predefined options:</p>
+                            <ul>
+                                <li>Generating optimized manufacturing parameters</li>
+                                <li>Creating new design alternatives to meet requirements</li>
+                                <li>Developing troubleshooting approaches for novel issues</li>
+                                <li>Synthesizing insights from disparate data sources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Manufacturing Applications (Intermediate Level) -->
+                <section class="content-section" data-level="intermediate" id="applications">
+                    <h2>Manufacturing Applications</h2>
+                    <!-- <span class="complexity-badge complexity-intermediate">Intermediate</span> -->
+                    
+                    <p>GenAI agents can be applied across various aspects of the manufacturing process, with particular relevance to additive manufacturing due to its complexity and data-rich nature.</p>
+                    
+                    <h3>Additive Manufacturing Applications</h3>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Design Optimization</h3>
+                                <p class="card-text">GenAI agents can generate and optimize designs specifically for AM processes, incorporating build constraints while maximizing performance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Process Parameter Selection</h3>
+                                <p class="card-text">Agents can determine optimal printing parameters based on part geometry, material properties, and quality requirements.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Quality Monitoring</h3>
+                                <p class="card-text">Real-time monitoring agents can detect anomalies during printing and either adjust parameters or alert operators.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Broader Manufacturing Applications</h3>
+                    <ul>
+                        <li><strong>Predictive Maintenance:</strong> Monitoring equipment health and predicting maintenance needs</li>
+                        <li><strong>Supply Chain Optimization:</strong> Managing inventory and logistics based on production demands</li>
+                        <li><strong>Production Scheduling:</strong> Optimizing manufacturing schedules for efficiency and throughput</li>
+                        <li><strong>Knowledge Management:</strong> Capturing, organizing, and applying manufacturing knowledge</li>
+                        <li><strong>Human-Machine Collaboration:</strong> Facilitating communication between operators and manufacturing systems</li>
+                    </ul>
+                </section>
+                
+                <!-- Implementation Considerations (Advanced Level) -->
+                <section class="content-section" data-level="advanced" id="implementation">
+                    <h2>Implementation Considerations</h2>
+                    <!-- <span class="complexity-badge complexity-advanced">Advanced</span> -->
+                    
+                    <p>Implementing GenAI agents in manufacturing environments requires careful consideration of several factors to ensure successful integration and operation.</p>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3>Technical Considerations</h3>
+                            <ul>
+                                <li><strong>Model Selection:</strong> Choosing appropriate foundation models for specific manufacturing tasks</li>
+                                <li><strong>Fine-Tuning:</strong> Adapting models to manufacturing-specific knowledge and terminology</li>
+                                <li><strong>Integration:</strong> Connecting agents with existing manufacturing systems and data sources</li>
+                                <li><strong>Computational Requirements:</strong> Ensuring sufficient resources for model inference and operation</li>
+                                <li><strong>Data Management:</strong> Handling the flow of information between agents and manufacturing systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3>Operational Considerations</h3>
+                            <ul>
+                                <li><strong>Reliability:</strong> Ensuring consistent agent performance in production environments</li>
+                                <li><strong>Safety:</strong> Implementing safeguards to prevent unintended actions or recommendations</li>
+                                <li><strong>Validation:</strong> Verifying agent outputs against established quality standards</li>
+                                <li><strong>Human Oversight:</strong> Defining appropriate levels of human supervision and intervention</li>
+                                <li><strong>Performance Metrics:</strong> Establishing KPIs to evaluate agent effectiveness</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Architectural Approaches</h3>
+                    <p>Several architectural patterns have emerged for implementing GenAI agents in manufacturing:</p>
+                    <ul>
+                        <li><strong>Centralized Agent Systems:</strong> A single agent coordinating multiple manufacturing functions</li>
+                        <li><strong>Distributed Multi-Agent Systems:</strong> Multiple specialized agents collaborating through defined protocols</li>
+                        <li><strong>Hierarchical Agent Structures:</strong> Layered agent systems with supervisory and operational levels</li>
+                        <li><strong>Hybrid Human-AI Systems:</strong> Collaborative frameworks where agents augment human capabilities</li>
+                    </ul>
+                </section>
+                
+                <!-- Research & Publications (Advanced Level) -->
+                <section class="content-section" data-level="advanced" id="research">
+                    <h2>Research & Publications</h2>
+                    <!-- <span class="complexity-badge complexity-advanced">Advanced</span> -->
+                    
+                    <p>This research on GenAI agent-based systems for manufacturing is conducted in collaboration with experts in both AI and manufacturing domains.</p>
+                    
+                    <h3>Research Team</h3>
+                    <p>This work is a collaboration between:</p>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/paul-witherell-a378422/" target="_blank">Paul Witherell</a></li>
+                        <li><a href="https://www.linkedin.com/in/majav/" target="_blank">Maja Vukovic</a></li>
+                        <li><a href="https://www.linkedin.com/in/soundar-kumara-1919971/" target="_blank">Soundar Kumara</a></li>
+                    </ul>
+                    
+                    <h3>Publications</h3>
+                    <p>The research is currently under review for publication. Check back for updates on the publication status and links to the full research paper.</p>
+                    
+                    <div class="cta-box">
+                        <h3>Explore GenAI Agent Applications</h3>
+                        <p>Discover how these foundational concepts are being applied in real-world manufacturing scenarios:</p>
+                        <div class="cta-buttons">
+                            <a href="genai-agents.html" class="btn">GenAI Agents in AM</a>
+                            <a href="../tutorials/prompt-engineering.html" class="btn btn-outline">Prompt Engineering for Agents</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="index.html" class="pagination-item pagination-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <div>
+                            <div class="pagination-label">Previous</div>
+                            <div class="pagination-title">GenAI Agents</div>
+                        </div>
+                    </a>
+                    
+                    <a href="../AM_dataset/datasets.html" class="pagination-item pagination-next">
+                        <div>
+                            <div class="pagination-label">Next</div>
+                            <div class="pagination-title">Resources</div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Depth Indicator -->
+        <div class="content-depth-indicator">
+            <!-- Markers will be generated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GenAI in Additive Manufacturing</h3>
+                    <p>An educational resource designed to introduce and guide users into generative AI applications within the additive manufacturing/3D printing industry.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../Develop GenAI models/index_nowrin.html">Develop GenAI model</a></li>
+                        <li><a href="../GenAI Agent/index.html">GenAI Agent</a></li>
+                        <li><a href="../AM_dataset/datasets.html">Resources</a></li>
+                        <li><a href="../Miscellaneous/index.html">Miscellaneous</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>References</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://doi.org/10.1016/j.ijinfomgt.2023.102749" target="_blank">International Journal of Information Management</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> GenAI in Additive Manufacturing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/search.js"></script>
+</body>
+</html>
