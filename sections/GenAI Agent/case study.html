@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agent Applications Resources in Additive Manufacturing - Understanding the Resources that is used for Developing GenAI agents for manufacturing applications">
+    <title>Agent Application | GenAI in Additive Manufacturing</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <span>GenAI in AM</span>
+            </a>
+            
+            <div class="search-container">
+                <form class="search-form" role="search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="search-results"></div>
+            </div>
+            
+            <button class="hamburger-menu" aria-label="Toggle menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../Develop GenAI models/index_nowrin.html">Develop GenAI model</a></li>
+                    <li><a href="../GenAI Agent/index.html">GenAI Agent</a></li>
+                    <li><a href="../AM_dataset/datasets.html">Resources</a></li>
+                    <li><a href="../Miscellaneous/index.html">Miscellaneous</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="index.html">GenAI Agent</a></li>
+                    <li><span class="current">Agent Resources</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Generative AI Agent Application for Manufacturing</h1>
+                        <p>Resource of GenAI agent development in additive manufacturing contexts.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="../../images/general-project3.jpg" alt="GenAI Agent Systems in Manufacturing" width="500" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content with Sidebar -->
+        <div class="container with-sidebar">
+            <!-- Sidebar with Table of Contents -->
+            <aside class="sidebar">
+                <div class="toc">
+                    <h2 class="toc-title">On This Page</h2>
+                    <ul class="toc-list">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#Design">Design</a></li>
+                        <!-- <li><a href="#traditional-vs-genai">Traditional vs. GenAI Agents</a></li>
+                        <li><a href="#agent-capabilities">Agent Capabilities</a></li>
+                        <li><a href="#applications">Manufacturing Applications</a></li>
+                        <li><a href="#implementation">Implementation Considerations</a></li>
+                        <li><a href="#research">Research & Publications</a></li> -->
+                    </ul>
+                </div>
+                
+                <div class="section-navigation">
+                    <h3>Related Topics</h3>
+                    <ul class="toc-list">
+                        <li><a href="genai-agents.html">GenAI Agents in AM</a></li>
+                        <li><a href="../tutorials/prompt-engineering.html">Prompt Engineering</a></li>
+                        <li><a href="../core-technologies/foundation-models.html">Foundation Models</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="content">
+                <!-- Overview (Basic Level) -->
+                <section class="content-section" data-level="basic" id="overview">
+                    <h2>Developing Agnet based framework</h2>
+                    <!-- <span class="complexity-badge complexity-beginner">Beginner</span> -->
+                    
+                
+                    
+                    <p>This page highlights resources used in developing Generative AI (GenAI) agents for Additive Manufacturing (AM). The resources are organized into four categories: Design, Pre-processing, In-situ Monitoring, and Post-processing</p>
+                    
+                  
+                </section>
+                
+               
+                <section class="content-section" data-level="basic" id="Design">
+                    <!-- <p>Design is an improtant part in AM. if the design, material selection, path planning is wrong, the product will be wrong</p> -->
+                    <h2>Problem: Material selection based on material properties</h2>
+                    <!-- <span class="complexity-badge complexity-beginner">Beginner</span> -->
+                    <p>Design is a crucial part of Additive Manufacturing (AM). It involves the geometry, material selection, path planning, and support structures. Poor design choices can lead to defects, build failures, or suboptimal performance.</p>
+                    <!-- <h3>Material Selection</h3> -->
+                    <p> Material selcetion is crucial part for AM. In the below we provide 8 material that are used in MAM based on differnt criterion</p>
+                    
+    <meta charset="UTF-8">
+    <title>Material Properties Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .material-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .material-table th, .material-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .material-table th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .material-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .material-table tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Material Properties</h2>
+    <table class="material-table">
+        <thead>
+            <tr>
+                <th>Material</th>
+                <th>Density (g/cm³)</th>
+                <th>Thermal Conductivity</th>
+                <th>Melting Temperature (°C)</th>
+                <th>CTE</th>
+                <th>Specific Heat (J/kgK)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Ti6Al4V</td><td>4.43</td><td>7.1</td><td>1695.0</td><td>8.6</td><td>561.5</td></tr>
+            <tr><td>IN718</td><td>8.19</td><td>9.0</td><td>1298.0</td><td>14.0</td><td>435.0</td></tr>
+            <tr><td>SS316L</td><td>7.99</td><td>16.2</td><td>1385.0</td><td>16.0</td><td>500.0</td></tr>
+            <tr><td>AlSi10Mg</td><td>2.68</td><td>160.0</td><td>580.0</td><td>20.5</td><td>910.0</td></tr>
+            <tr><td>IN625</td><td>8.44</td><td>9.2</td><td>1320.0</td><td>12.8</td><td>429.0</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+                
+                <div class="pagination">
+                    <a href="index.html" class="pagination-item pagination-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <div>
+                            <div class="pagination-label">Previous</div>
+                            <div class="pagination-title">GenAI Agents</div>
+                        </div>
+                    </a>
+                    
+                    <a href="../AM_dataset/datasets.html" class="pagination-item pagination-next">
+                        <div>
+                            <div class="pagination-label">Next</div>
+                            <div class="pagination-title">Resources</div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Depth Indicator -->
+        <div class="content-depth-indicator">
+            <!-- Markers will be generated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GenAI in Additive Manufacturing</h3>
+                    <p>An educational resource designed to introduce and guide users into generative AI applications within the additive manufacturing/3D printing industry.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../Develop GenAI models/index_nowrin.html">Develop GenAI model</a></li>
+                        <li><a href="../GenAI Agent/index.html">GenAI Agent</a></li>
+                        <li><a href="../AM_dataset/datasets.html">Resources</a></li>
+                        <li><a href="../Miscellaneous/index.html">Miscellaneous</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>References</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://doi.org/10.1016/j.matpr.2022.05.272" target="_blank">Materials Today: Proceedings</a></li>
+                        <li><a href="https://www.protolabs.com/resources/guides-and-trend-reports/metal-3d-printing-materials-guide/" target="_blank">Metal 3D Printing Materials: What to Know</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> GenAI in Additive Manufacturing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/navigation.js"></script>
+    <script src="../../js/search.js"></script>
+</body>
+</html>
